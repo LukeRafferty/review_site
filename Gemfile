@@ -8,6 +8,10 @@ gem 'jquery-rails'
 gem 'listen'
 gem 'foundation-rails'
 
+group :test do
+  gem 'coveralls', require: false
+end
+
 group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
@@ -15,7 +19,6 @@ group :development, :test do
   gem 'pry-rails'
   gem 'shoulda'
   gem 'valid_attribute'
-  gem 'coveralls', require: false
 end
 
 group :test do
