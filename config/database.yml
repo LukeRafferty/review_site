@@ -5,16 +5,16 @@ default: &default
 
 development:
   <<: *default
-  database: reviews_site_development
+  database: review_site_development
 
 
 test:
   <<: *default
-  database: reviews_site_test
+  database: review_site_test
 
 
 production:
   <<: *default
-  database: reviews_site_production
-  username: reviews_site
-  password: <%= ENV['REVIEWS_SITE_DATABASE_PASSWORD'] %>
+  database: review_site_production
+  username: review_site
+  password: <%= ENV['REVIEW_SITE_DATABASE_PASSWORD'] %>
