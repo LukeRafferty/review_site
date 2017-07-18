@@ -5,7 +5,8 @@ require 'pry'
 feature "user signs up" do
 
   scenario "Provides all the necessary info" do
-    visit new_user_registration_path
+    visit root_path
+    click_on 'Sign Up'
     expect(page).to_not have_content("Sign Out")
 
     fill_in 'Username', with: 'John'
@@ -15,6 +16,7 @@ feature "user signs up" do
     check 'Admin?'
     click_button 'Sign Up'
 
+    expect(page).to have_content('Welcome! You have signed up successfully.')
     expect(page).to have_content('Sign Out')
 
   end
