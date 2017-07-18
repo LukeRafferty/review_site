@@ -6,11 +6,17 @@ feature "user signs up" do
 
   scenario "Provides all the necessary info" do
     visit new_user_registration_path
+    expect(page).to_not have_content("Sign Out")
+
     fill_in 'Username', with: 'John'
     fill_in 'Email', with: "example@example.com"
     fill_in 'Password', with: 'password'
     fill_in 'Password Confirmation', with: 'password'
+    check 'Admin?'
     click_button 'Sign Up'
+
+    expect(page).to have_content('Sign Out')
+
   end
 
   scenario "Does not provide enough information" do
