@@ -8,7 +8,7 @@ RSpec.describe User, type: :model do
   it { should have_valid(:email).when('user@example.com') }
   it { should_not have_valid(:email).when(nil, 'user.com', 'user') }
 
-  it "has matching passwword confirmation" do
+  it "has matching password confirmation" do
     user_one = User.new
     user_one.email = "example@example.com"
     user_one.admin = false
@@ -28,7 +28,5 @@ RSpec.describe User, type: :model do
     user_two.password_confirmation='password'
     expect(user_two).to be_valid
   end
-
-
 
 end
