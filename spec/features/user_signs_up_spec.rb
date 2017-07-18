@@ -1,5 +1,5 @@
 require "rails_helper"
-require 'pry'
+
 #as a user, I want to be able to sign up
 
 feature "user signs up" do
