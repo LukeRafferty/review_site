@@ -8,7 +8,8 @@ feature 'User Logs in' do
 
   scenario 'an existing user specifies a valid email and password' do
     user = FactoryGirl.create(:user)
-    visit new_user_session_path
+    visit root_path
+    click_on 'Sign In'
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
     click_button 'Log in'
@@ -18,9 +19,39 @@ feature 'User Logs in' do
 
   end
 
-  scenario 'a nonexistant email and password in supplied'
+  scenario 'a nonexistant email and password is supplied' do
+    user = FactoryGirl.create(:user)
+    visit root_path
+    click_on 'Sign In'
+    fill_in 'Email', with: ''
+    fill_in 'Password', with: ''
+    click_button 'Log in'
 
-  scenario 'an existing email with the wrong password is denied access'
+    expect(page).to have_content("Invalid Email or password")
 
-  scenario 'an already authenticated user cannot re-sign in'
+  end
+
+  scenario 'an existing email with the wrong password is denied access' do
+    user = FactoryGirl.create(:user)
+    visit root_path
+    click_on 'Sign In'
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: 'incorrectPassword'
+    click_button 'Log in'
+
+    expect(page).to have_content('Invalid Email or password.')
+
+
+  end
+
+  scenario 'an already authenticated user cannot re-sign in' do
+    user = FactoryGirl.create(:user)
+    visit new_user_session_path
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+    click_button 'Log in'
+
+    expect(page).to have_content('Sign Out')
+    expect(page).to_not have_content('Sign In')
+  end
 end
