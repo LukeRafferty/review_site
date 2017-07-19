@@ -24,12 +24,6 @@ const App = props => {
 
       <Route exact path='/restaurants' component={RestaurantsIndexContainer} />
       <Route exact path='/restaurant/:id' component={RestaurantShowContainer} />
-      <Route exact path='/restaurants/new' component={RestaurantsNewContainer} />
-      <Route exact path='/restaurants/:id/edit' component={RestaurantEditContainer} />
-
-      <Route exact path='restaurants/:restaurant_id/reviews/new' component={RestaurantNewReviewContainer} />
-      <Route exact path='restaurants/:restaurant_id/reviews/:id/edit' component={RestaurantEditReviewContainer} />
-
 
       </div>
     </Router>
@@ -39,3 +33,10 @@ const App = props => {
 
 
 export default App
+
+// to be added
+// <Route exact path='/restaurants/new' component={RestaurantsNewContainer} />
+// <Route exact path='/restaurants/:id/edit' component={RestaurantEditContainer} />
+//
+// <Route exact path='restaurants/:restaurant_id/reviews/new' component={RestaurantNewReviewContainer} />
+// <Route exact path='restaurants/:restaurant_id/reviews/:id/edit' component={RestaurantEditReviewContainer} />

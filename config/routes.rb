@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'static_pages#index'
+  root 'homes#index'
   resources :restaurants do
     resources :reviews, except: [:index, :show]
   end
 
   namespace :api do
     namespace :v1 do
-      resources :restaurants, only: [:index]
+      resources :restaurants, only: [:index, :show]
     end
   end
 

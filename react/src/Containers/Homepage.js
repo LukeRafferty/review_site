@@ -9,7 +9,7 @@ class Homepage extends Component {
   }
   render() {
     return(
-      <p> nope </p>
+      <p> Homepage </p>
     )
   }
 }
