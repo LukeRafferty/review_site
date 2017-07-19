@@ -1,23 +1,19 @@
 <% if @validation %>
 
-<h1>Admin tools</h1>
-<%= link_to "New Burger Joint", new_restaurant_path %>
+  <h1>Admin tools</h1>
 
-<%= link_to "Make first user an admin", user_path(User.first), method: :patch  %>
-
-
-
-
-
-
-
-
+  <div class="text-center">
+    <h1>
+      <%= link_to "Create New Burger Joint", new_restaurant_path %>
+    </h1>
+  </div>
 
 <% else %>
-<div class="text-center">
-  <h1>Oops! You must be an admin to view this page!</h1>
 
-</div>
+  <div class="text-center">
+    <h1>Oops! You must be an admin to view this page!</h1>
+
+  </div>
 
 <% end %>
 

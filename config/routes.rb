@@ -5,9 +5,6 @@ Rails.application.routes.draw do
     resources :reviews, except: [:index, :show]
   end
 
-  #promote users to admin level
-  resources :users, only: [:update]
-
   namespace :api do
     namespace :v1 do
       resources :restaurants, only: [:index, :show]
