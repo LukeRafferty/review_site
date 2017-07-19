@@ -27,13 +27,12 @@ class RestaurantsController < ApplicationController
   end
 
   def update
-    # @post = Post.find(params[:id])
-    #  @post.update(title: params[:title], description: params[:description])
-    #  redirect_to post_path(@post)
+    @restaurant = Restaurant.find(params[:id])
+    @restaurant.update(name: params[:name], address: params[:address], city: params[:city], state: params[:state], zip_code: params[:zip_code], description: params[:description])
+    redirect_to restaurant_path(@restaurant)
   end
 
   def delete
-
   end
 
   protected
