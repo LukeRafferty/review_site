@@ -3,6 +3,16 @@
 <h1>Admin tools</h1>
 <%= link_to "New Burger Joint", new_restaurant_path %>
 
+<%= link_to "Make first user an admin", user_path(User.first), method: :patch  %>
+
+
+
+
+
+
+
+
+
 <% else %>
 <div class="text-center">
   <h1>Oops! You must be an admin to view this page!</h1>

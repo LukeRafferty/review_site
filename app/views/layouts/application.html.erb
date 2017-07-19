@@ -33,7 +33,10 @@
       </section>
     </nav>
 
-
+      <% if flash[:admin] %>
+        <p><%= flash[:admin] %></p>
+      <% end %>
+      
       <p class="alert"><%= alert %></p>
       <p class="notice"><%= notice %></p>
 
