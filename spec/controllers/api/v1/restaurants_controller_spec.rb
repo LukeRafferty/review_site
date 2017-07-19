@@ -22,6 +22,23 @@ RSpec.describe Api::V1::RestaurantsController, type: :controller do
     )
   }
 
+  let!(:user) { User.create(
+    username: "Bobert Jr.",
+    email: "ReturnofBobert@limewire.com",
+    password: "password123"
+    )
+
+  }
+
+  let!(:review) { Review.create(
+    user: user,
+    restaurant: restaurant_one,
+    rating: 5,
+    body: "Very good"
+    )
+
+  }
+
 
 
   describe "GET#index" do
@@ -65,7 +82,22 @@ RSpec.describe Api::V1::RestaurantsController, type: :controller do
         expect(response.status).to eq 200
         expect(response.content_type).to eq("application/json")
 
-        binding.pry
+        expect(body["restaurant"]).to be_kind_of(Hash)
+        expect(body["restaurant"]).to_not be_kind_of(Array)
+        expect(body["restaurant"]["reviews"]).to be_kind_of(Array)
+        expect(body["restaurant"]["reviews"]).to_not be_kind_of(Hash)
+
+        expect(body["restaurant"]["name"]).to eq("name")
+        expect(body["restaurant"]["address"]).to eq("address")
+        expect(body["restaurant"]["city"]).to eq("city")
+        expect(body["restaurant"]["state"]).to eq("state")
+        expect(body["restaurant"]["zip_code"]).to eq("zip code")
+        expect(body["restaurant"]["description"]).to eq("description")
+        expect(body["restaurant"]["reviews"].first["id"]).to eq(review["id"])
+        expect(body["restaurant"]["reviews"].first["id"]).to eq(review["id"])
+        expect(body["restaurant"]["reviews"].first["rating"]).to eq(5)
+        expect(body["restaurant"]["reviews"].first["body"]).to eq("Very good")
+
 
       end
 

@@ -23,7 +23,7 @@ const App = props => {
       <Route exact path='/' component={Homepage} />
 
       <Route exact path='/restaurants' component={RestaurantsIndexContainer} />
-      <Route exact path='/restaurant/:id' component={RestaurantShowContainer} />
+      <Route exact path='/restaurants/:id' component={RestaurantShowContainer} />
 
       </div>
     </Router>
