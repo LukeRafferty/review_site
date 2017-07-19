@@ -1,4 +1,5 @@
 class Review < ApplicationRecord
+<<<<<<< HEAD
   RATINGS = [
     [1, "star"],
     [2, "stars"],
@@ -11,4 +12,12 @@ class Review < ApplicationRecord
   validates :rating, presence: true, numericality: { only_integer: true }, inclusion: { in: RATINGS.map { |rating| rating[0] } }
   validates :body, presence: true
 
+=======
+
+  validates :rating, presence: true
+
+  belongs_to :restaurant
+  belongs_to :user
+
+>>>>>>> restaurant_reviews
 end
