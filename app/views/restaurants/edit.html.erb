@@ -1,26 +1,42 @@
 <!-- for admins -->
+
 <% if current_user.admin %>
+<h1>Refactor Restaurant</h1>
 
-  <%= form_for restaurants_path(@restaurant), method: "patch" do %>
-    <label>Restaurant Name:</label></br>
-    <%= text_field :name, @restaurant.name %></br>
+  <%= form_for(@restaurant) do |f| %>
 
-    <label>Restaurant Address:</label></br>
-    <%= text_field :address, @restaurant.address %></br>
+    <% if @restaurant.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
 
-    <label>Restaurant City:</label></br>
-    <%= text_field :city, @restaurant.city %></br>
+        <ul>
+        <% @restaurant.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-    <label>Restaurant State:</label></br>
-    <%= text_field :state, @restaurant.state %></br>
+    <%= f.label :name %>
+    <%= f.text_field :name%>
 
-    <label>Restaurant Zip Code:</label></br>
-    <%= text_field :zip_code, @restaurant.zip_code %></br>
+    <%= f.label :address %>
+    <%= f.text_field :address%>
 
-    <label>Restaurant Description:</label></br>
-    <%= text_field :description, @restaurant.description %></br>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
 
-    <%= f.submit "Submit Edits" %>
+    <%= f.label :state %>
+    <%= f.text_field :state %>
+
+    <%= f.label :zip_code, "Zip Code"%>
+    <%= f.text_field :zip_code %>
+
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+
+    <%= f.submit "Refactor", method: :patch %>
+
   <% end %>
 
 <!-- for regular users -->
@@ -34,3 +50,22 @@
 <div id="app">
 
 </div>
+
+<!--
+<label>Restaurant Name:</label></br>
+<%= text_field :name, @restaurant.name %></br>
+
+<label>Restaurant Address:</label></br>
+<%= text_field :address, @restaurant.address %></br>
+
+<label>Restaurant City:</label></br>
+<%= text_field :city, @restaurant.city %></br>
+
+<label>Restaurant State:</label></br>
+<%= text_field :state, @restaurant.state %></br>
+
+<label>Restaurant Zip Code:</label></br>
+<%= text_field :zip_code, @restaurant.zip_code %></br>
+
+<label>Restaurant Description:</label></br>
+<%= text_field :description, @restaurant.description %></br> -->

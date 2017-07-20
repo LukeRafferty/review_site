@@ -16,8 +16,10 @@ class RestaurantsController < ApplicationController
   def create
     @restaurant = Restaurant.new(restaurant_params)
       if @restaurant.save
+        flash[:notice] = 'Restaurant Added Successfully'
         redirect_to @restaurant
       else
+        flash[:alert] = "error!"
         render :new
     end
   end
@@ -28,7 +30,7 @@ class RestaurantsController < ApplicationController
 
   def update
     @restaurant = Restaurant.find(params[:id])
-    @restaurant.update(name: params[:name], address: params[:address], city: params[:city], state: params[:state], zip_code: params[:zip_code], description: params[:description])
+    @restaurant.update_attributes(restaurant_params)
     redirect_to restaurant_path(@restaurant)
   end
 

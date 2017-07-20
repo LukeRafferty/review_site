@@ -4,7 +4,17 @@
   <h1>New Restaurant Form</h1>
 
   <%= form_for(@restaurant) do |f| %>
+    <% if @restaurant.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
 
+        <ul>
+        <% @restaurant.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
     <%= f.label :name %>
     <%= f.text_field :name %>
 
@@ -17,7 +27,7 @@
     <%= f.label :state %>
     <%= f.text_field :state %>
 
-    <%= f.label :zip_code %>
+    <%= f.label :zip_code, "Zip Code"%>
     <%= f.text_field :zip_code %>
 
     <%= f.label :description %>
