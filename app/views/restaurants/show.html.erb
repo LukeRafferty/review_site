@@ -5,7 +5,7 @@
 <h5> <%= @restaurant.zip_code%> </h5>
 <p> <%= @restaurant.description%> </p>
 
-
+<%= button_to "Add Review", new_restaurant_review_path(@restaurant), method: :get %>
 <%= link_to "Refactor", edit_restaurant_path(@restaurant) %>
 
 <div id="app">
