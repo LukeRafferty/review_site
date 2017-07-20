@@ -5,7 +5,9 @@ import App from './Containers/App'
 
 $(function() {
   ReactDOM.render(
-    <App />,
+    <h3>React!</h3>,
     document.getElementById('app')
   );
 });
+
+//change the h3 to <App/> to enable react!

@@ -1,4 +1,5 @@
-<% if @validation %>
+<!-- for admins -->
+<% if current_user.admin %>
 
   <h1>Admin tools</h1>
 
@@ -8,15 +9,16 @@
     </h1>
   </div>
 
-<% else %>
 
+
+<!-- for regular users -->
+<% else %>
   <div class="text-center">
     <h1>Oops! You must be an admin to view this page!</h1>
-
   </div>
-
 <% end %>
 
+<!-- react -->
 <div id="app">
 
 </div>

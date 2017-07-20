@@ -1,25 +1,39 @@
-<h1>New Restaurant Form</h1>
+<!-- for admins -->
+<% if current_user.admin %>
 
-<%= form_for(@restaurant) do |f| %>
+  <h1>New Restaurant Form</h1>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= form_for(@restaurant) do |f| %>
 
-  <%= f.label :address %>
-  <%= f.text_field :address %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
 
-  <%= f.label :city %>
-  <%= f.text_field :city %>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
 
-  <%= f.label :state %>
-  <%= f.text_field :state %>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
 
-  <%= f.label :zip_code %>
-  <%= f.text_field :zip_code %>
+    <%= f.label :state %>
+    <%= f.text_field :state %>
 
-  <%= f.label :description %>
-  <%= f.text_area :description %>
+    <%= f.label :zip_code %>
+    <%= f.text_field :zip_code %>
 
-  <%= f.submit "Add Restaurant" %>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
 
+    <%= f.submit "Add Restaurant" %>
+
+  <% end %>
+
+<!-- for regular users -->
+<% else %>
+<div class="text-center">
+  <h1>Oops! You must be an admin to view this page!</h1>
+</div>
 <% end %>
+
+<div id="app">
+
+</div>
