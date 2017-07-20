@@ -1,5 +1,5 @@
 <!-- for admins -->
-<% if current_user.admin %>
+<% if current_user != nil && current_user.admin %>
 
   <h1>New Restaurant Form</h1>
 

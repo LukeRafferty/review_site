@@ -1,5 +1,5 @@
 <!-- for admins -->
-<% if current_user.admin %>
+<% if current_user != nil && current_user.admin %>
 
   <%= form_for restaurants_path(@restaurant), method: "patch" do %>
     <label>Restaurant Name:</label></br>
