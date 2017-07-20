@@ -1,6 +1,6 @@
 <!-- for admins -->
-
-<% if current_user.admin %>
+<<<<<<< HEAD
+  <% if current_user != nil && current_user.admin %>
 <h1>Refactor Restaurant</h1>
 
   <%= form_for(@restaurant) do |f| %>
@@ -8,6 +8,8 @@
     <% if @restaurant.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
+=======
+>>>>>>> not_admin_errors
 
         <ul>
         <% @restaurant.errors.full_messages.each do |message| %>
