@@ -9,5 +9,3 @@ $(function() {
     document.getElementById('app')
   );
 });
-
-//change the h3 to <App/> to enable react!

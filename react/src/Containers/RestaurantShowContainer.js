@@ -41,9 +41,6 @@ class RestaurantShowContainer extends Component {
 
     return(
       <div>
-        <RestaurantShowTile
-        name={this.state.restaurant.name}
-        />
         {reviews}
       </div>
     )
