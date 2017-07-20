@@ -18,4 +18,9 @@ class ApplicationController < ActionController::Base
      .merge(admin: admin_status)
    end
  end
+
+ def not_found
+  raise ActionController::RoutingError.new('Not Found')
+ end
+
 end

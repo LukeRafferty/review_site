@@ -1,0 +1,12 @@
+<h1> Burgr Joints </h1>
+<ul>
+  <% @restaurants.each do |restaurant| %>
+  <li>
+    <%= link_to restaurant.name, restaurant_path(restaurant) %>
+  </li>
+  <% end %>
+</ul>
+
+<div id="app">
+
+</div>

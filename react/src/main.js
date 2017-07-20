@@ -1,10 +1,13 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './Containers/App'
 
 $(function() {
   ReactDOM.render(
-    <h1>Boo yaa</h1>,
+    <h3>React!</h3>,
     document.getElementById('app')
   );
 });
+
+//change the h3 to <App/> to enable react!

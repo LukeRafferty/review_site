@@ -1,0 +1,21 @@
+<!-- for regular users -->
+<% if current_user != nil && current_user.admin %>
+
+  <h1>Admin tools</h1>
+
+  <div class="text-center">
+    <h1>
+      <%= link_to "Create New Burger Joint", new_restaurant_path %>
+    </h1>
+  </div>
+
+<!-- for admins -->
+<% else %>
+  <div class="text-center">
+    <h1>Oops! You must be an admin to view this page!</h1>
+  </div>
+<% end %>
+<!-- react -->
+<div id="app">
+
+</div>
