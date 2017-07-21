@@ -38,11 +38,9 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
     @restaurant.destroy
     if @restaurant.destroy
-      redirect_to restaurants_path, notice: "Restaurant deleted"
+      redirect_to restaurants_path, notice: "Restaurant was successfully deleted"
     else
-
       render @restaurant, alert: "The restaurant was not deleted"
-
     end
   end
 

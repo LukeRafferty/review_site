@@ -7,6 +7,10 @@
 
 <%= button_to "Add Review", new_restaurant_review_path(@restaurant), method: :get %>
 <%= link_to "Refactor", edit_restaurant_path(@restaurant) %>
+<% if current_user != nil && current_user.admin %>
+  | <%= link_to "destroy", @restaurant, method: :delete,
+                                data: { confirm: "You sure?" } %>
+<% end %>
 
 <div id="app">
 
