@@ -1,5 +1,5 @@
 require "rails_helper"
-require 'pry'
+
 
 RSpec.describe Api::V1::RestaurantsController, type: :controller do
 
