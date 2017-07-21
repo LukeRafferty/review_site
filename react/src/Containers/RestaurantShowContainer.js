@@ -26,11 +26,14 @@ class RestaurantShowContainer extends Component {
     })
   }
 
+
+
   render() {
     console.log(this.state);
-
     let reviews = this.state.reviews.map(review => {
+
       return(
+
         <RestaurantReviewTile
           key={review.id}
           rating={review.rating}

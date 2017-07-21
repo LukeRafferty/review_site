@@ -34,9 +34,6 @@ class RestaurantsController < ApplicationController
     redirect_to restaurant_path(@restaurant)
   end
 
-  def delete
-  end
-
   protected
 
   def restaurant_params
