@@ -26,8 +26,9 @@ feature "admin can delete a restaurant" do
     click_on "destroy"
 
     expect(page).to have_content("Restaurant was successfully deleted")
-
+    expect(page).to_not have_content "Burger King"
   end
+
   scenario "users cannot delete restaurants" do
     restaurant1 = FactoryGirl.create(:restaurant)
     user = FactoryGirl.create(:user, admin: false)
@@ -41,4 +42,6 @@ feature "admin can delete a restaurant" do
     expect(page).to have_content "Burgerzone"
     expect(page).to_not have_content "destroy"
   end
+
+
 end
