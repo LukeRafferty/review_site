@@ -1,4 +1,6 @@
 require 'coveralls'
+require 'database_cleaner'
+
 Coveralls.wear!('rails')
 
 RSpec.configure do |config|
@@ -11,6 +13,16 @@ RSpec.configure do |config|
   config.mock_with :rspec do |mocks|
 
     mocks.verify_partial_doubles = true
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner.clean
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner.clean
   end
 
 end
