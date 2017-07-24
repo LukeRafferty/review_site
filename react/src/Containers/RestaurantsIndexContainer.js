@@ -29,7 +29,7 @@ class RestaurantsIndexContainer extends Component {
           name={r.name}
           address={r.address}
           description={r.description}
-          img={"https://pbs.twimg.com/profile_images/694921357864386563/p0nF8Bj8.jpg"}
+          img={"#"}
         />
       )
     })
