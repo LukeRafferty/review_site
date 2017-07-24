@@ -27,14 +27,19 @@ class RestaurantsIndexContainer extends Component {
           key={r.id}
           id={r.id}
           name={r.name}
+          address={r.address}
+          description={r.description}
+          img={"https://pbs.twimg.com/profile_images/694921357864386563/p0nF8Bj8.jpg"}
         />
       )
     })
 
     return(
       <div>
-        <h1> Burgr Joints </h1>
-        {restaurants}
+        <h1 className={'text-center'}> Burgr Joints </h1>
+        <div>
+          {restaurants}
+        </div>
       </div>
     )
   }
