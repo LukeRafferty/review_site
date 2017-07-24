@@ -8,5 +8,4 @@ const RestaurantIndexTile = props => {
   )
 }
 
-
 export default RestaurantIndexTile;

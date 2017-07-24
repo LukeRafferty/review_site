@@ -16,7 +16,7 @@ describe('RestaurantReviewTile', () => {
   })
 
   it('should render a 2 p tags', () => {
-    expect(wrapper.find('p').length).toEqual(2);
+    expect(wrapper.find('p').length).toEqual(4);
   })
 
   it('should have a body prop', () => {

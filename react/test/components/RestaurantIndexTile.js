@@ -15,11 +15,11 @@ describe('RestaurantIndexTile', () => {
   })
 
   it('should render a p tag', () => {
-    expect(wrapper.find('p').length).toEqual(1);
+    expect(wrapper.find('a').length).toEqual(1);
   })
 
   it('should render the correct text', () => {
-    expect(wrapper.find('p').text()).toBe("Archie's")
+    expect(wrapper.find('a').text()).toBe("Archie's")
   })
 
 })
