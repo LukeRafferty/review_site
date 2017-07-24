@@ -1,16 +1,3 @@
-<h1> Burgr Joints </h1>
-<ul>
-  <% @restaurants.each do |restaurant| %>
-  <li>
-    <%= link_to restaurant.name, restaurant_path(restaurant) %>
-  </li>
-    <% if current_user != nil && current_user.admin %>
-      | <%= link_to "destroy", restaurant, method: :delete,
-                                    data: { confirm: "You sure?" } %>
-    <% end %>
-  <% end %>
-</ul>
-
 <div id="app">
 
 </div>
