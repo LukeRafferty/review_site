@@ -15,7 +15,7 @@ p#Title {
   font-family: Molot;
   src: url(Molot.woff);
   text-align: center;
-  text-decoration: overline underline;
+  /*text-decoration: overline underline;*/
    text-decoration-color: #E5CB7A;
    text-shadow: 10px 10px #FF4500;
 }
