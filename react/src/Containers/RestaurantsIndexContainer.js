@@ -21,14 +21,14 @@ class RestaurantsIndexContainer extends Component {
   }
   render() {
 
-    let restaurants = this.state.restaurants.map(r => {
+    let restaurants = this.state.restaurants.map(restaurant => {
       return(
         <RestaurantIndexTile
-          key={r.id}
-          id={r.id}
-          name={r.name}
-          address={r.address}
-          description={r.description}
+          key={restaurant.id}
+          id={restaurant.id}
+          name={restaurant.name}
+          address={restaurant.address}
+          description={restaurant.description}
           img={"#"}
         />
       )
