@@ -2,7 +2,7 @@ class RestaurantsController < ApplicationController
 
   def index
     @restaurants = Restaurant.all
-    if params[:search]
+    if valid_search_params
       #if the search bar is used, try to bring the user to a show page
       @restaurant = Restaurant.search(params[:search]).order("created_at DESC").first
       if @restaurant
@@ -62,6 +62,13 @@ class RestaurantsController < ApplicationController
 
   def restaurant_params
     params.require(:restaurant).permit(:name, :address, :city, :state, :zip_code, :description)
+  end
+
+  def valid_search_params
+    params[:search] &&
+    params[:search] != "" &&
+    params[:search] != " " &&
+    params[:search].length > 1
   end
 
 end
