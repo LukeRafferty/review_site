@@ -11,6 +11,10 @@
   <% end %>
 </ul>
 
+<% if @restaurants.blank? %>
+  <h4>There are no restaurants containing the term <%= params[:search] %>.</h4>
+<% end %>
+
 <div id="app">
 
 </div>
