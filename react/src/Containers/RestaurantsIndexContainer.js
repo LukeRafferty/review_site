@@ -25,6 +25,7 @@ class RestaurantsIndexContainer extends Component {
       return(
         <RestaurantIndexTile
           key={r.id}
+          id={r.id}
           name={r.name}
         />
       )
@@ -32,6 +33,7 @@ class RestaurantsIndexContainer extends Component {
 
     return(
       <div>
+        <h1> Burgr Joints </h1>
         {restaurants}
       </div>
     )
