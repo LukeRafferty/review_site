@@ -41,7 +41,7 @@ class RestaurantShowContainer extends Component {
     })
 
     return(
-      <div>
+      <div className='review' id='reviewTile'>
         {reviews}
       </div>
     )

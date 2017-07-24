@@ -1,0 +1,44 @@
+a {
+  color: white;
+}
+
+.info{
+  border-width: thin;
+  border-radius: 25px;
+  border-style: solid;
+  margin: 1%;
+}
+
+#smallBox {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 25px;
+}
+
+#descriptionBox {
+  border-style: solid;
+  border-width: 1px;
+  padding: 2%;
+  border-radius: 25px;
+  margin: 2%;
+  /*margin-left: 10%;
+  margin-right: 10%;*/
+}
+
+
+#stateZip {
+  text-align: right;
+}
+/*
+#underline {
+  border-bottom: thin solid;
+  margin-bottom: 10px;
+}*/
+
+/*#reviewTile {
+  margin: 5%;
+}*/
+
+#reviewContainer {
+  margin: 5%;
+}
