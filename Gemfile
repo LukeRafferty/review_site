@@ -11,6 +11,7 @@ gem 'devise'
 gem 'active_model_serializers'
 gem 'httparty'
 
+
 group :test do
   gem 'coveralls', require: false
   gem 'database_cleaner'
@@ -23,6 +24,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'shoulda'
   gem 'valid_attribute'
+  gem 'dotenv'
 end
 
 group :test do
