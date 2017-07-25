@@ -30,8 +30,9 @@ feature "admin can delete a restaurant" do
   end
 
   scenario "users cannot delete restaurants" do
-    restaurant1 = FactoryGirl.create(:restaurant)
     user = FactoryGirl.create(:user, admin: false)
+    restaurant1 = FactoryGirl.create(:restaurant, user_id: user.id)
+
     visit root_path
     click_on 'Sign In'
     fill_in 'Email', with: user.email

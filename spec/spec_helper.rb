@@ -16,6 +16,7 @@ RSpec.configure do |config|
   end
 
   config.before(:each) do
+    ActionMailer::Base.deliveries.clear
     DatabaseCleaner.strategy = :truncation
     DatabaseCleaner.clean
   end

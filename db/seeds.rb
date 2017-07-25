@@ -1,10 +1,6 @@
 require 'httparty'
 require 'dotenv/load'
 
-
-
-
-
 url = "https://api.yelp.com/v3/businesses/search?term=burger&location=boston"
 response = HTTParty.get(url, headers: { "Authorization" => "Bearer #{ENV['YELP_ACCESS_TOKEN']}" })
 response["businesses"].each do |business|
