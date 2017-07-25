@@ -14,11 +14,11 @@ feature "website sends email to admin when reivew is posted on a restaurant" do
 
   visit restaurant_path(restaurant.id)
 
-  click_button 'Add Review'
+  click_on 'Add Review'
   expect(page).to have_content(restaurant.name)
   fill_in 'Body', with: 'Total garbage'
   fill_in 'Rating', with: '3'
-  click_button 'Add Review'
+  click_on 'Add Review'
   expect(page).to have_content(restaurant.name)
   expect(page).to have_content('Review Added Successfully')
 
@@ -33,14 +33,14 @@ feature "website sends email to admin when reivew is posted on a restaurant" do
     click_on "Sign In"
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    click_button 'Log in'
+    click_on 'Log in'
 
     visit restaurant_path(restaurant.id)
 
-    click_button 'Add Review'
+    click_on 'Add Review'
     expect(page).to have_content(restaurant.name)
     fill_in 'Body', with: 'Total garbage'
-    click_button 'Add Review'
+    click_on 'Add Review'
     expect(page).to have_content('error!')
     expect(page).to have_content('can\'t be blank')
     expect(page).to have_content("New Review Form for: #{restaurant.name}")
