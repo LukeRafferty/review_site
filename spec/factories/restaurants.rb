@@ -1,5 +1,4 @@
 FactoryGirl.define do
-
   factory :restaurant do
     name 'Burgerzone'
     address 'This street'
@@ -7,5 +6,6 @@ FactoryGirl.define do
     state 'MA'
     zip_code 'zip code'
     description 'delicious'
+    user_id 1
   end
 end
