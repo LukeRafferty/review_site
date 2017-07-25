@@ -10,6 +10,7 @@ gem 'rails-assets-foundation', source: 'https://rails-assets.org'
 gem 'devise'
 gem 'active_model_serializers'
 gem 'httparty'
+gem 'dotenv'
 
 group :test do
   gem 'coveralls', require: false
@@ -23,6 +24,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'shoulda'
   gem 'valid_attribute'
+  gem 'carrierwave'
 end
 
 group :test do

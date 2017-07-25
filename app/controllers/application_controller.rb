@@ -14,13 +14,9 @@ class ApplicationController < ActionController::Base
           admin_status = true
         end
       end
-     user_params.permit(:username, :email, :password, :password_confirmation)
+     user_params.permit(:username, :email, :password, :password_confirmation, :profile_photo)
      .merge(admin: admin_status)
    end
- end
-
- def not_found
-  raise ActionController::RoutingError.new('Not Found')
  end
 
 end
