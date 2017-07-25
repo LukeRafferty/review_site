@@ -50,13 +50,13 @@ feature "search bar: " do
   scenario "user types invalid query in search bar" do
     fill_in "search", with: ""
     click_button "Search"
-    expect(current_path).to eq(restaurants_path)
+    expect(current_path).to eq(root_path)
     expect(page).to_not have_content("No results for")
 
     visit root_path
     fill_in "search", with: " "
     click_button "Search"
-    expect(current_path).to eq(restaurants_path)
+    expect(current_path).to eq(root_path)
     expect(page).to_not have_content("No results for")
 
     visit root_path

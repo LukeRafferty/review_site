@@ -9,12 +9,17 @@ class RestaurantsController < ApplicationController
         redirect_to restaurant_path(@restaurant)
       else
         #navigate to the index page with flash alert
-        flash[:alert] = "No results for '#{params[:search]}'"
+        flash[:alert] = "No results for '#{params[:search]}'. Try some of these other burgr joints!"
         @restaurants = Restaurant.all.order("created_at DESC")
       end
     else
-      #navigate directly to the index page
-      @restaurants = Restaurant.all.order("created_at DESC")
+      if params[:search] == "" || params[:search] == " "
+        #redirect to the homepage if the search is an empty string
+        redirect_to root_path
+      else
+        #navigate directly to the index page (search bar was not used)
+        @restaurants = Restaurant.all.order("created_at DESC")
+      end
     end
   end
 
