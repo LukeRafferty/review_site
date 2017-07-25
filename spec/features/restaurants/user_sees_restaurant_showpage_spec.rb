@@ -1,7 +1,8 @@
 require "rails_helper"
 feature 'user visits the restaurant show page' do
   scenario 'correctly displays the show page with one restaurant' do
-    restaurant = FactoryGirl.create(:restaurant)
+    user = FactoryGirl.create(:user, admin: false)
+    restaurant = FactoryGirl.create(:restaurant, user_id: user.id)
     visit restaurant_path(restaurant.id)
     expect(page).to have_content('Burgerzone')
     expect(page).to have_content('This street')

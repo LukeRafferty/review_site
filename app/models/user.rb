@@ -4,6 +4,7 @@ class User < ApplicationRecord
   validates :email, presence: true, format: { with: /@/ }
 
   has_many :reviews
+  has_many :restaurants 
 
   #CarrierWave
   mount_uploader :profile_photo, ProfilePhotoUploader

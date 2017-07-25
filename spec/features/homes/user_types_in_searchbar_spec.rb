@@ -4,7 +4,7 @@ feature "search bar: " do
 
   before(:each) do
     admin = FactoryGirl.create(:user, admin: true)
-    restaurant = FactoryGirl.create(:restaurant)
+    restaurant = FactoryGirl.create(:restaurant, user_id: admin.id)
     visit root_path
     click_on 'Sign In'
     fill_in 'Email', with: admin.email
