@@ -1,7 +1,6 @@
 class RestaurantsController < ApplicationController
 
   def index
-    @restaurants = Restaurant.all
     if valid_search_params
       #if the search bar is used, try to bring the user to a show page
       @restaurant = Restaurant.search(params[:search]).order("created_at DESC").first
