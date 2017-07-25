@@ -1,8 +1,26 @@
 class RestaurantsController < ApplicationController
-  # before_action :authorize_user, except: [:index, :show]
 
   def index
-    @restaurants = Restaurant.all
+    if valid_search_params
+      #if the search bar is used, try to bring the user to a show page
+      @restaurant = Restaurant.search(params[:search]).order("created_at DESC").first
+      if @restaurant
+        #take the user to the show page
+        redirect_to restaurant_path(@restaurant)
+      else
+        #navigate to the index page with flash alert
+        flash[:alert] = "No results for '#{params[:search]}'. Try some of these other burgr joints!"
+        @restaurants = Restaurant.all.order("created_at DESC")
+      end
+    else
+      if params[:search] == "" || params[:search] == " "
+        #redirect to the homepage if the search is an empty string
+        redirect_to root_path
+      else
+        #navigate directly to the index page (search bar was not used)
+        @restaurants = Restaurant.all.order("created_at DESC")
+      end
+    end
   end
 
   def show
@@ -47,13 +65,14 @@ class RestaurantsController < ApplicationController
   protected
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :address, :city, :state, :zip_code, :description)
+    params.require(:restaurant).permit(:name, :address, :city, :state, :zip_code, :description).merge(user_id: current_user.id)
   end
 
-  # def authorize_user
-  #   if !user_signed_in? || !current_user.admin?
-  #     raise ActionController::RoutingError.new("Not Found")
-  #   end
-  # end
+  def valid_search_params
+    params[:search] &&
+    params[:search] != "" &&
+    params[:search] != " " &&
+    params[:search].length > 1
+  end
 
 end

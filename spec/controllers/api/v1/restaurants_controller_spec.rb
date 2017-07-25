@@ -3,24 +3,8 @@ require "rails_helper"
 
 RSpec.describe Api::V1::RestaurantsController, type: :controller do
 
-  let!(:restaurant_one) { Restaurant.create(
-    name: "name",
-    address: "address",
-    city: "city",
-    state: "state",
-    zip_code: "zip code",
-    description: "description"
-    )
-  }
-  let!(:restaurant_two) { Restaurant.create(
-    name: "name two",
-    address: "address two",
-    city: "city two",
-    state: "state two",
-    zip_code: "zip code two",
-    description: "description two"
-    )
-  }
+
+
 
   let!(:user) { User.create(
     username: "Bobert Jr.",
@@ -28,6 +12,28 @@ RSpec.describe Api::V1::RestaurantsController, type: :controller do
     password: "password123"
     )
 
+  }
+
+  let!(:restaurant_one) { Restaurant.create(
+    name: "name",
+    address: "address",
+    city: "city",
+    state: "state",
+    zip_code: "zip code",
+    description: "description",
+    user_id: user.id
+    )
+  }
+
+  let!(:restaurant_two) { Restaurant.create(
+    name: "name two",
+    address: "address two",
+    city: "city two",
+    state: "state two",
+    zip_code: "zip code two",
+    description: "description two",
+    user_id: user.id
+    )
   }
 
   let!(:review) { Review.create(

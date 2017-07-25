@@ -3,7 +3,6 @@
   <head>
     <title>Burgr</title>
     <%= csrf_meta_tags %>
-
     <%= javascript_include_tag 'application' %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
@@ -12,7 +11,9 @@
     <nav class="top-bar" data-topbar role="navigation">
       <ul class="title-area">
         <li class="name">
-          <h1><a href="/">Burgr</a></h1>
+          <h1>
+            <a href="/">Burgr</a>
+          </h1>
         </li>
          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -21,13 +22,20 @@
       <section class="top-bar-section">
         <!-- Right Nav Section -->
         <ul class="right">
-          <li class="active"><%= link_to 'Restaurants', restaurants_path %></li>
+          <li id="Restaurants" class="active"><%= link_to 'Restaurants', restaurants_path %></li>
           <% if user_signed_in? %>
+            <!-- actions -->
             <li class="active"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
             <li class="active"><%= link_to 'Edit Profile', edit_user_registration_path %></li>
               <% if current_user.admin %>
               <li class="active"><%= link_to 'Admin Tools', '/admin' %></li>
               <% end %>
+            <!-- profile_photo -->
+            <li class="active">
+              <div class="profile-photo">
+                <img src="<%= current_user.profile_photo %>">
+              </div>
+            </li>
           <% else %>
             <li class="active"><%= link_to 'Sign Up', new_user_registration_path %></li>
             <li class="active"><%= link_to 'Sign In', new_user_session_path %></li>
@@ -41,12 +49,13 @@
         <p><%= flash[:admin] %></p>
       <% end %>
 
-      <p class="alert"><%= alert %></p>
-      <p class="notice"><%= notice %></p>
-
+      <h4 class="alert text-center"><%= alert %></h4>
+      <h4 class="notice text-center"><%= notice %></h4>
 
 
       <%= yield %>
 
   </body>
+
+
 </html>
