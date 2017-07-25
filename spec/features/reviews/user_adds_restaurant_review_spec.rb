@@ -2,7 +2,7 @@ require "rails_helper"
 feature 'user adds a new review' do
   scenario 'user can, in fact, add a review' do
     user = FactoryGirl.create(:user, admin: false)
-    restaurant = FactoryGirl.create(:restaurant)
+    restaurant = FactoryGirl.create(:restaurant, user_id: user.id)
     visit root_path
     click_on 'Sign In'
     fill_in 'Email', with: user.email
@@ -20,7 +20,7 @@ feature 'user adds a new review' do
 
   scenario "user attempts to submit empty form" do
     user = FactoryGirl.create(:user, admin: false)
-    restaurant = FactoryGirl.create(:restaurant)
+    restaurant = FactoryGirl.create(:restaurant, user_id: user.id)
     visit root_path
     click_on 'Sign In'
     fill_in 'Email', with: user.email
@@ -35,7 +35,7 @@ feature 'user adds a new review' do
 
   scenario "user attempts to submit half-filled out form" do
     user = FactoryGirl.create(:user, admin: false)
-    restaurant = FactoryGirl.create(:restaurant)
+    restaurant = FactoryGirl.create(:restaurant, user_id: user.id)
     visit root_path
     click_on 'Sign In'
     fill_in 'Email', with: user.email
@@ -51,7 +51,8 @@ feature 'user adds a new review' do
   end
 
   scenario "user is not signed in" do
-    restaurant = FactoryGirl.create(:restaurant)
+    user = FactoryGirl.create(:user, admin: false)
+    restaurant = FactoryGirl.create(:restaurant, user_id: user.id)
     visit restaurant_path(restaurant.id)
     click_button 'Add Review'
     expect(page).to have_content('You must be signed in to add a review!')

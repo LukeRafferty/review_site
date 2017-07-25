@@ -4,6 +4,7 @@ class User < ApplicationRecord
   validates :email, presence: true, format: { with: /@/ }
 
   has_many :reviews
+  has_many :restaurants 
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

@@ -8,6 +8,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @restaurant = Restaurant.find(params[:restaurant_id])
       if @review.save
+        ReviewMailer.new_review(@review).deliver_now
         flash[:notice] = 'Review Added Successfully'
         redirect_to @review.restaurant
       else

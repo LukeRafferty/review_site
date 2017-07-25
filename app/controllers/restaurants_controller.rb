@@ -65,7 +65,7 @@ class RestaurantsController < ApplicationController
   protected
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :address, :city, :state, :zip_code, :description)
+    params.require(:restaurant).permit(:name, :address, :city, :state, :zip_code, :description).merge(user_id: current_user.id)
   end
 
   def valid_search_params
