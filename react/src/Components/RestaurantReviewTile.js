@@ -42,7 +42,7 @@ class RestaurantReviewTile extends Component {
 
   render() {
     return(
-    <div className="panel"  id="reviewContainer">
+    <div className="panel"  id="descriptionBox">
       <div className="text-center row">
         <div className='small-3 columns'>
           <UpvoteTile

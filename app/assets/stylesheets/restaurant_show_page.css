@@ -3,24 +3,27 @@ a {
 }
 
 .info{
-  border-width: thin;
-  border-radius: 25px;
-  border-style: solid;
-  margin: 1%;
+  background-color: #E5CB7A;
+  box-shadow: 10px 10px #FF4500;
+  margin: 2em;
+  padding: 1em 3em 1em 3em;
+  border: 1px solid grey;
 }
 
 #smallBox {
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 25px;
+  background-color: #EDE0B6;
+  box-shadow: 10px 10px #F08158;
+  margin: 2em;
+  padding: 1em 3em 1em 3em;
+  border: 1px solid grey;
 }
 
 #descriptionBox {
-  border-style: solid;
-  border-width: 1px;
-  padding: 2%;
-  border-radius: 25px;
-  margin: 2%;
+  background-color: #EDE0B6;
+  box-shadow: 10px 10px #F08158;
+  margin: 2em;
+  padding: 1em 3em 1em 3em;
+  border: 1px solid grey;
   /*margin-left: 10%;
   margin-right: 10%;*/
 }
@@ -41,4 +44,9 @@ a {
 
 #reviewContainer {
   margin: 5%;
+  background-color: #E5CB7A;
+  box-shadow: 10px 10px #FF4500;
+  margin: 2em;
+  padding: 1em 3em 1em 3em;
+  border: 1px solid grey;
 }
