@@ -1,7 +1,9 @@
 .index-container {
+  background-color: #E5CB7A;
+  box-shadow: 10px 10px #FF4500;
   margin: 2em;
   padding: 1em 3em 1em 3em;
-  border: 2px solid grey;
+  border: 1px solid grey;
 }
 
 .index-link-and-info-container {

@@ -1,5 +1,9 @@
 class Restaurant < ApplicationRecord
 
+  def self.search(search)
+    where("name ILIKE ?", "%#{search}%")
+  end
+
   validates :name, presence: true
   validates :address, presence: true
   validates :city, presence: true

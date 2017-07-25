@@ -9,8 +9,10 @@ class Homepage extends Component {
   }
   render() {
     return(
-      <p> Homepage </p>
-    )
+      <div>
+      </div>
+
+    );
   }
 }
 
