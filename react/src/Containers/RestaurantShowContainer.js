@@ -6,7 +6,6 @@ class RestaurantShowContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      restaurant: {},
       reviews: []
     }
   }
@@ -14,19 +13,19 @@ class RestaurantShowContainer extends Component {
   componentDidMount() {
     fetch(`/api/v1/restaurants/${this.props.match.params.id}`)
     .then(response => {
-      return response.json()
+      return( response.json() )
     })
-    .then(response => response.restaurant)
-    .then(restaurant => {
-      let reviews = restaurant.reviews
+    .then(reviews => {
+      console.log('set state');
+      console.log(reviews);
       this.setState({
-        restaurant,
-        reviews
+        reviews: reviews.reviews
       })
     })
   }
 
   render() {
+    console.log('log state');
     console.log(this.state);
 
     let reviews = this.state.reviews.map(review => {
@@ -36,6 +35,7 @@ class RestaurantShowContainer extends Component {
           key={review.id}
           rating={review.rating}
           body={review.body}
+          votes={review.votes}
         />
       )
     })

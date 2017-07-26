@@ -6,8 +6,7 @@ class RestaurantReviewTile extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      upvotes: null,
-      downvotes: null
+      totalVotes: 0
     }
     this.upvote = this.upvote.bind(this)
     this.downvote = this.downvote.bind(this)
@@ -40,9 +39,26 @@ class RestaurantReviewTile extends Component {
     });
   }
 
+  componentDidMount() {
+    let tally = 0;
+    this.props.votes.forEach(vote => {
+      if (vote.up_down) {
+        tally += 1;
+      } else {
+        tally -=1;
+      }
+    })
+    this.setState({
+      totalVotes: tally
+    })
+  }
+
   render() {
     return(
       <div className="panel">
+        <div>
+          {this.state.totalVotes}
+        </div>
         <div>
           <UpvoteTile
             upvote={this.upvote}
