@@ -77,9 +77,6 @@ class RestaurantReviewTile extends Component {
 
     return(
 
-
-
-
     <div className="panel"  id="descriptionBox">
       <div>
         {totalVotes}
