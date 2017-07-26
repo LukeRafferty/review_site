@@ -1,3 +1,7 @@
-.selected {
-  background-color: orange;
+.upvote-selected {
+  background-color: lightgreen;
+}
+
+.downvote-selected {
+  background-color: lightblue;
 }

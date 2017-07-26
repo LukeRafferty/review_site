@@ -23,7 +23,7 @@ class RestaurantReviewTile extends Component {
     }).then(response => {
       return(response.json())
     }).then(response => {
-      this.setState({ isUpvote: "y" }, this.tallyVotes())
+      this.setState({ isUpvote: "y" })
     });
   }
 
@@ -35,7 +35,7 @@ class RestaurantReviewTile extends Component {
     }).then(response => {
       return(response.json())
     }).then(response => {
-      this.setState({ isUpvote: "n" }, this.tallyVotes())
+      this.setState({ isUpvote: "n" })
     });
   }
 
@@ -64,14 +64,16 @@ class RestaurantReviewTile extends Component {
     let selected = this.state.isUpvote;
 
     if (selected === "y") {
-      upvoteSelected = "selected"
+      upvoteSelected = "upvote-selected"
       downvoteSelected = ""
     } else if (selected === "n") {
       upvoteSelected = ""
-      downvoteSelected = "selected"
+      downvoteSelected = "downvote-selected"
     }
 
-    let totalVotes = this.state.totalVotes;
+    let totalVotes = this.state.totalVotes
+
+
 
     return(
       <div className="panel">
