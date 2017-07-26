@@ -4,7 +4,9 @@ class Api::V1::RestaurantsController < ApplicationController
   end
 
   def show
-    render json: Restaurant.find(params[:id]), adapter: :json
+    #only return the reviews
+    reviews = Restaurant.find(params[:id]).reviews
+    render json: reviews, adapter: :json
   end
-  
+
 end

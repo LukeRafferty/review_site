@@ -45,8 +45,12 @@
 <div class="info">
   <h3 class="text-center"> Reviews: </h3>
 
-  <div id="app">
-  </div>
+  <% if !current_user.nil? %>
+    <div id="app">
+    </div>
+  <% else %>
+    <h3>You must be signed in to view reviews</h3>
+  <% end %>
 
   <div class='row'>
   </div>
