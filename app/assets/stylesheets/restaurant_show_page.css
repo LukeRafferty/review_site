@@ -1,0 +1,52 @@
+a {
+  color: white;
+}
+
+.info{
+  background-color: #E5CB7A;
+  box-shadow: 10px 10px #FF4500;
+  margin: 2em;
+  padding: 1em 3em 1em 3em;
+  border: 1px solid grey;
+}
+
+#smallBox {
+  background-color: #EDE0B6;
+  box-shadow: 10px 10px #F08158;
+  margin: 2em;
+  padding: 1em 3em 1em 3em;
+  border: 1px solid grey;
+}
+
+#descriptionBox {
+  background-color: #EDE0B6;
+  box-shadow: 10px 10px #F08158;
+  margin: 2em;
+  padding: 1em 3em 1em 3em;
+  border: 1px solid grey;
+  /*margin-left: 10%;
+  margin-right: 10%;*/
+}
+
+
+#stateZip {
+  text-align: right;
+}
+/*
+#underline {
+  border-bottom: thin solid;
+  margin-bottom: 10px;
+}*/
+
+/*#reviewTile {
+  margin: 5%;
+}*/
+
+#reviewContainer {
+  margin: 5%;
+  background-color: #E5CB7A;
+  box-shadow: 10px 10px #FF4500;
+  margin: 2em;
+  padding: 1em 3em 1em 3em;
+  border: 1px solid grey;
+}

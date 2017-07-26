@@ -9,7 +9,7 @@ feature "admin can delete a restaurant" do
     click_on 'Sign In'
     fill_in 'Email', with: admin.email
     fill_in 'Password', with: admin.password
-    click_button 'Log in'
+    click_on 'Log in'
     visit new_restaurant_path
 
     fill_in 'Name', with: "Burger King"
@@ -21,9 +21,9 @@ feature "admin can delete a restaurant" do
     expect(page).to have_button 'Add Restaurant'
     click_on "Add Restaurant"
     expect(page).to have_content "Burger King"
-    expect(page).to have_content "destroy"
+    expect(page).to have_content "Destroy"
 
-    click_on "destroy"
+    click_on "Destroy"
 
     expect(page).to have_content("Restaurant was successfully deleted")
     expect(page).to_not have_content "Burger King"
@@ -37,11 +37,11 @@ feature "admin can delete a restaurant" do
     click_on 'Sign In'
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    click_button 'Log in'
+    click_on 'Log in'
     visit restaurant_path(restaurant1.id)
 
     expect(page).to have_content "Burgerzone"
-    expect(page).to_not have_content "destroy"
+    expect(page).to_not have_content "Destroy"
   end
 
 

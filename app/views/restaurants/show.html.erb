@@ -1,17 +1,57 @@
-<h1> <%= @restaurant.name%> </h1>
-<h5> <%= @restaurant.address%> </h5>
-<h5> <%= @restaurant.city%> </h5>
-<h5> <%= @restaurant.state%> </h5>
-<h5> <%= @restaurant.zip_code%> </h5>
-<p> <%= @restaurant.description%> </p>
 
-<%= button_to "Add Review", new_restaurant_review_path(@restaurant), method: :get %>
-<%= link_to "Refactor", edit_restaurant_path(@restaurant) %>
-<% if current_user != nil && current_user.admin %>
-  | <%= link_to "destroy", @restaurant, method: :delete,
-                                data: { confirm: "You sure?" } %>
+
+
+<div class='info'>
+  <div class='text-center'>
+    <img src=>
+  </div>
+
+  <div class='text-center' >
+    <h1> <%= @restaurant.name%> </h1>
+  </div>
+
+  <div class='row' id='smallBox'>
+    <div class='small-5 columns' >
+      <h5> <%= @restaurant.address%> </h5>
+      <h5> <%= @restaurant.city%> </h5>
+    </div>
+    <div class='small-5 columns' id='stateZip'>
+      <h5> <%= @restaurant.state%> </h5>
+      <h5> <%= @restaurant.zip_code%> </h5>
+    </div>
+  </div>
+
+  <p class='text-center' id='descriptionBox'> <%= @restaurant.description%> </p>
+
+</div>
+
+<div class='text-center'>
+  <% if current_user != nil && current_user.admin %>
+  <div class='row'>
+    <div class='small-4 columns button'>
+      <%= link_to "Refactor", edit_restaurant_path(@restaurant) %>
+    </div>
+
+    <div class='small-4 columns button alert'>
+      <%= link_to "Destroy", @restaurant, method: :delete,
+        data: { confirm: "You sure?" } %>
+    </div>
+  </div>
+</div>
+
 <% end %>
 
-<div id="app">
 
+<div class="info">
+  <h3 class="text-center"> Reviews: </h3>
+
+  <div id="app">
+  </div>
+
+  <div class='row'>
+  </div>
+</div>
+
+<div class='small-4 small-offset-4 text-center columns button'>
+  <%= link_to "Add Review", new_restaurant_review_path(@restaurant), method: :get %>
 </div>
