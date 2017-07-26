@@ -81,28 +81,17 @@ RSpec.describe Api::V1::RestaurantsController, type: :controller do
 
     describe "GET#show" do
 
-      it "should return a restaurant and all its reviews" do
+      it "should return a only the reviews of a restaurant" do
         get :show, params: { id: restaurant_one.id }
         body = JSON.parse(response.body)
 
         expect(response.status).to eq 200
         expect(response.content_type).to eq("application/json")
 
-        expect(body["restaurant"]).to be_kind_of(Hash)
-        expect(body["restaurant"]).to_not be_kind_of(Array)
-        expect(body["restaurant"]["reviews"]).to be_kind_of(Array)
-        expect(body["restaurant"]["reviews"]).to_not be_kind_of(Hash)
-
-        expect(body["restaurant"]["name"]).to eq("name")
-        expect(body["restaurant"]["address"]).to eq("address")
-        expect(body["restaurant"]["city"]).to eq("city")
-        expect(body["restaurant"]["state"]).to eq("state")
-        expect(body["restaurant"]["zip_code"]).to eq("zip code")
-        expect(body["restaurant"]["description"]).to eq("description")
-        expect(body["restaurant"]["reviews"].first["id"]).to eq(review["id"])
-        expect(body["restaurant"]["reviews"].first["id"]).to eq(review["id"])
-        expect(body["restaurant"]["reviews"].first["rating"]).to eq(5)
-        expect(body["restaurant"]["reviews"].first["body"]).to eq("Very good")
+        expect(body["reviews"]).to be_kind_of(Array)
+        expect(body["reviews"].length).to eq(1)
+        expect(body["reviews"].first["id"]).to eq(1)
+        expect(body["reviews"].first["body"]).to eq('Very good')
 
 
       end

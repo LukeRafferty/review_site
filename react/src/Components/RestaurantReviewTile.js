@@ -6,11 +6,12 @@ class RestaurantReviewTile extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      upvotes: null,
-      downvotes: null
+      totalVotes: 0,
+      isUpvote: undefined
     }
     this.upvote = this.upvote.bind(this)
     this.downvote = this.downvote.bind(this)
+    this.tallyVotes = this.tallyVotes.bind(this)
   }
 
 
@@ -20,10 +21,9 @@ class RestaurantReviewTile extends Component {
       credentials: "same-origin",
       body: JSON.stringify({ review_id: this.props.id, up_down: true })
     }).then(response => {
-      console.log(response)
       return(response.json())
     }).then(response => {
-      console.log(response);
+      this.setState({ isUpvote: "y" })
     });
   }
 
@@ -33,20 +33,63 @@ class RestaurantReviewTile extends Component {
       credentials: "same-origin",
       body: JSON.stringify({ review_id: this.props.id, up_down: false })
     }).then(response => {
-      console.log(response)
       return(response.json())
     }).then(response => {
-      console.log(response);
+      this.setState({ isUpvote: "n" })
     });
   }
 
+  tallyVotes() {
+    let tally = 0;
+    this.props.votes.forEach(vote => {
+      if (vote.up_down) {
+        tally += 1;
+      } else {
+        tally -=1;
+      }
+    })
+    this.setState({
+      totalVotes: tally
+    })
+  }
+
+  componentDidMount() {
+    this.tallyVotes()
+  }
+
   render() {
+    //highlighting for votes
+    let upvoteSelected = "";
+    let downvoteSelected = "";
+    let selected = this.state.isUpvote;
+
+    if (selected === "y") {
+      upvoteSelected = "upvote-selected"
+      downvoteSelected = ""
+    } else if (selected === "n") {
+      upvoteSelected = ""
+      downvoteSelected = "downvote-selected"
+    }
+
+    let totalVotes = this.state.totalVotes
+
+
+
     return(
+
+
+
+
     <div className="panel"  id="descriptionBox">
+      <div>
+        {totalVotes}
+      </div>
       <div className="text-center row">
         <div className='small-3 columns'>
+
           <UpvoteTile
             upvote={this.upvote}
+            selected={upvoteSelected}
           />
         </div>
 
@@ -62,6 +105,7 @@ class RestaurantReviewTile extends Component {
         <div className='small-3 columns'>
           <DownvoteTile
             downvote={this.downvote}
+            selected={downvoteSelected}
           />
         </div>
       </div>
