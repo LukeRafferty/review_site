@@ -25,10 +25,4 @@ response["businesses"].each do |business|
     description: basic_description
     user_id: User.first.id
   )
-  User.create(
-    admin: true,
-    username: 'BurgrAdmin',
-    email: 'burgrco@gmail.com',
-    password: 'MakeNoBugs!',
-  )
 end
