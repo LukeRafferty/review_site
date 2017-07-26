@@ -1,6 +1,13 @@
 require 'httparty'
 require 'dotenv/load'
 
+User.create(
+  admin: true,
+  username: 'BurgrAdmin',
+  email: 'burgrco@gmail.com',
+  password: 'MakeNoBugs!',
+)
+
 url = "https://api.yelp.com/v3/businesses/search?term=burger&location=boston"
 response = HTTParty.get(url, headers: { "Authorization" => "Bearer #{ENV['YELP_ACCESS_TOKEN']}" })
 response["businesses"].each do |business|
@@ -15,6 +22,7 @@ response["businesses"].each do |business|
     city: business["location"]["city"],
     state: business["location"]["state"],
     zip_code: business["location"]["zip_code"],
-    description: basic_description
+    description: basic_description,
+    user_id: User.first.id
   )
 end

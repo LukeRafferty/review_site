@@ -11,6 +11,7 @@ gem 'devise'
 gem 'active_model_serializers'
 gem 'httparty'
 gem 'dotenv'
+gem 'fog-aws'
 
 group :test do
   gem 'coveralls', require: false
