@@ -76,25 +76,40 @@ class RestaurantReviewTile extends Component {
 
 
     return(
-      <div className="panel">
-        <div>
-          {totalVotes}
-        </div>
-        <div>
+
+
+
+
+    <div className="panel"  id="descriptionBox">
+      <div>
+        {totalVotes}
+      </div>
+      <div className="text-center row">
+        <div className='small-3 columns'>
+
           <UpvoteTile
             upvote={this.upvote}
             selected={upvoteSelected}
           />
+        </div>
+
+        <div className='small-6 columns'>
+          <div className="text-center">
+            <p>{this.props.rating}</p>
+          </div>
+          <div>
+            <p>{this.props.body}</p>
+          </div>
+        </div>
+
+        <div className='small-3 columns'>
           <DownvoteTile
             downvote={this.downvote}
             selected={downvoteSelected}
           />
         </div>
-        <div>
-          <p>{this.props.rating}</p>
-          <p>{this.props.body}</p>
-        </div>
       </div>
+    </div>
     )
   }
 
