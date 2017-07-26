@@ -30,7 +30,6 @@ class Api::V1::VotesController < ApplicationController
         user_id: current_user.id,
         up_down: data["up_down"]
       )
-      binding.pry
       if vote.save
         render json: vote, adapter: :json
       else

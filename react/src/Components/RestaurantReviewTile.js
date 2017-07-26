@@ -6,10 +6,12 @@ class RestaurantReviewTile extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      totalVotes: 0
+      totalVotes: 0,
+      isUpvote: undefined
     }
     this.upvote = this.upvote.bind(this)
     this.downvote = this.downvote.bind(this)
+    this.tallyVotes = this.tallyVotes.bind(this)
   }
 
 
@@ -19,10 +21,9 @@ class RestaurantReviewTile extends Component {
       credentials: "same-origin",
       body: JSON.stringify({ review_id: this.props.id, up_down: true })
     }).then(response => {
-      console.log(response)
       return(response.json())
     }).then(response => {
-      console.log(response);
+      this.setState({ isUpvote: "y" }, this.tallyVotes())
     });
   }
 
@@ -32,14 +33,13 @@ class RestaurantReviewTile extends Component {
       credentials: "same-origin",
       body: JSON.stringify({ review_id: this.props.id, up_down: false })
     }).then(response => {
-      console.log(response)
       return(response.json())
     }).then(response => {
-      console.log(response);
+      this.setState({ isUpvote: "n" }, this.tallyVotes())
     });
   }
 
-  componentDidMount() {
+  tallyVotes() {
     let tally = 0;
     this.props.votes.forEach(vote => {
       if (vote.up_down) {
@@ -53,18 +53,39 @@ class RestaurantReviewTile extends Component {
     })
   }
 
+  componentDidMount() {
+    this.tallyVotes()
+  }
+
   render() {
+    //highlighting for votes
+    let upvoteSelected = "";
+    let downvoteSelected = "";
+    let selected = this.state.isUpvote;
+
+    if (selected === "y") {
+      upvoteSelected = "selected"
+      downvoteSelected = ""
+    } else if (selected === "n") {
+      upvoteSelected = ""
+      downvoteSelected = "selected"
+    }
+
+    let totalVotes = this.state.totalVotes;
+
     return(
       <div className="panel">
         <div>
-          {this.state.totalVotes}
+          {totalVotes}
         </div>
         <div>
           <UpvoteTile
             upvote={this.upvote}
+            selected={upvoteSelected}
           />
           <DownvoteTile
             downvote={this.downvote}
+            selected={downvoteSelected}
           />
         </div>
         <div>

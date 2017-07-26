@@ -16,8 +16,6 @@ class RestaurantShowContainer extends Component {
       return( response.json() )
     })
     .then(reviews => {
-      console.log('set state');
-      console.log(reviews);
       this.setState({
         reviews: reviews.reviews
       })
@@ -25,9 +23,6 @@ class RestaurantShowContainer extends Component {
   }
 
   render() {
-    console.log('log state');
-    console.log(this.state);
-
     let reviews = this.state.reviews.map(review => {
       return(
         <RestaurantReviewTile
