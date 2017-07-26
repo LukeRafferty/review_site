@@ -1,0 +1,18 @@
+
+<% if current_user != nil && current_user.admin %>
+
+
+<% @users.each do |user| %>
+<%= link_to user.username, user%>
+
+  <%= user.id %> <br><br>
+<% end %>
+
+
+
+<% else %>
+
+<h1>WHOOPS you must be an admin to view this page</h1>
+
+
+<% end %>
