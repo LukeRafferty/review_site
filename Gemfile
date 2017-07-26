@@ -10,7 +10,10 @@ gem 'rails-assets-foundation', source: 'https://rails-assets.org'
 gem 'devise'
 gem 'active_model_serializers'
 gem 'httparty'
+gem 'fog'
+gem 'fog-aws'
 gem 'dotenv'
+gem 'dotenv-rails'
 
 group :test do
   gem 'coveralls', require: false
