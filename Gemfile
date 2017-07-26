@@ -12,6 +12,8 @@ gem 'active_model_serializers'
 gem 'httparty'
 gem 'fog'
 gem 'fog-aws'
+gem 'dotenv'
+gem 'dotenv-rails'
 
 group :test do
   gem 'coveralls', require: false
@@ -26,7 +28,6 @@ group :development, :test do
   gem 'shoulda'
   gem 'valid_attribute'
   gem 'carrierwave'
-  gem 'dotenv'
 end
 
 group :test do
