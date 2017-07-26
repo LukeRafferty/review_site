@@ -1,0 +1,13 @@
+<% if current_user != nil && current_user.admin %>
+
+<%= @user.username %>
+
+ <%= link_to "destroy", @user, method: :delete,
+    data: { confirm: "You sure?" } %>
+
+<% else %>
+
+<h1>WHOOPS you must be an admin to view this page</h1>
+
+
+<% end %>
