@@ -2,7 +2,9 @@ import React from 'react'
 
 const RestaurantShowTile = props => {
   return(
-    <h1>{props.name}</h1>
+    <div className="text-center">
+      <h1>{props.name}</h1>
+    </div>
   )
 }
 

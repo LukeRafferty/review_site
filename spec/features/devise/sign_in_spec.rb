@@ -12,7 +12,7 @@ feature 'User Logs in' do
     click_on 'Sign In'
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    click_button 'Log in'
+    click_on 'Log in'
 
     expect(page).to have_content("Signed in successfully.")
     expect(page).to have_content("Sign Out")
@@ -38,7 +38,7 @@ feature 'User Logs in' do
     click_on 'Sign In'
     fill_in 'Email', with: ''
     fill_in 'Password', with: ''
-    click_button 'Log in'
+    click_on 'Log in'
 
     expect(page).to have_content("Invalid Email or password")
 
@@ -50,7 +50,7 @@ feature 'User Logs in' do
     click_on 'Sign In'
     fill_in 'Email', with: user.email
     fill_in 'Password', with: 'incorrectPassword'
-    click_button 'Log in'
+    click_on 'Log in'
 
     expect(page).to have_content('Invalid Email or password.')
   end
@@ -61,7 +61,7 @@ feature 'User Logs in' do
     click_on 'Sign In'
     fill_in 'Email', with: user.email
     fill_in 'Password', with: 'incorrectPassword'
-    click_button 'Log in'
+    click_on 'Log in'
 
     expect(page).to have_content('Invalid Email or password.')
   end
@@ -71,7 +71,7 @@ feature 'User Logs in' do
     visit new_user_session_path
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    click_button 'Log in'
+    click_on 'Log in'
 
     expect(page).to have_content('Sign Out')
     expect(page).to_not have_content('Sign In')
@@ -82,7 +82,7 @@ feature 'User Logs in' do
     visit new_user_session_path
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    click_button 'Log in'
+    click_on 'Log in'
 
     expect(page).to have_content('Sign Out')
     expect(page).to_not have_content('Sign In')
