@@ -10,7 +10,6 @@ gem 'rails-assets-foundation', source: 'https://rails-assets.org'
 gem 'devise'
 gem 'active_model_serializers'
 gem 'httparty'
-gem 'dotenv'
 gem 'fog-aws'
 
 group :test do
@@ -26,6 +25,7 @@ group :development, :test do
   gem 'shoulda'
   gem 'valid_attribute'
   gem 'carrierwave'
+  gem 'dotenv'
 end
 
 group :test do
