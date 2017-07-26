@@ -16,5 +16,12 @@ response["businesses"].each do |business|
     state: business["location"]["state"],
     zip_code: business["location"]["zip_code"],
     description: basic_description
+    user_id: User.first.id
+  )
+  User.create(
+    admin: true,
+    username: 'BurgrAdmin',
+    email: 'burgrco@gmail.com',
+    password: 'MakeNoBugs!',
   )
 end
