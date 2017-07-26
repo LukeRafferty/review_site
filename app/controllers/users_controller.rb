@@ -6,14 +6,17 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+
   end
 
   def destroy
     @user = User.find(params[:id])
-    @user.destroy
     if @user.destroy
       redirect_to root_url, notice: "User deleted."
+    else
+      redirect_to root_path, alert: "User remains undeleted :/"
     end
+
   end
 end
 # user_signed_in?
