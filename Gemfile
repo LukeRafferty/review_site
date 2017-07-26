@@ -14,6 +14,7 @@ gem 'fog'
 gem 'fog-aws'
 gem 'dotenv'
 gem 'dotenv-rails'
+gem 'carrierwave'
 
 group :test do
   gem 'coveralls', require: false
@@ -27,7 +28,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'shoulda'
   gem 'valid_attribute'
-  gem 'carrierwave'
+
 end
 
 group :test do
