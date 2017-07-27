@@ -21,7 +21,6 @@ const App = props => {
       <div>
 
       <Route exact path='/' component={Homepage} />
-
       <Route exact path='/restaurants' component={RestaurantsIndexContainer} />
       <Route exact path='/restaurants/:id' component={RestaurantShowContainer} />
 
