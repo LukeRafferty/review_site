@@ -29,7 +29,7 @@ RSpec.describe Api::V1::ReviewsController, type: :controller do
       response = (delete :destroy, id: review.id)
       body = JSON.parse(response.body)
       expect(body).to be_kind_of(Hash)
-      expect(body["result"]).to eq "Review deleted successfully"
+      expect(body["result"]).to eq "Review will be deleted"
       expect(body["result"]).to_not eq "Failed to delete review"
       expect(body["result"]).to_not eq "You do not have permission to delete this review"
       expect(Review.all.length).to eq 0
@@ -39,7 +39,7 @@ RSpec.describe Api::V1::ReviewsController, type: :controller do
       response = (delete :destroy, id: review.id)
       body = JSON.parse(response.body)
       expect(body).to be_kind_of(Hash)
-      expect(body["result"]).to eq "Review deleted successfully"
+      expect(body["result"]).to eq "Review will be deleted"
       expect(body["result"]).to_not eq "Failed to delete review"
       expect(body["result"]).to_not eq "You do not have permission to delete this review"
       expect(Review.all.length).to eq 0
@@ -49,7 +49,7 @@ RSpec.describe Api::V1::ReviewsController, type: :controller do
       response = (delete :destroy, id: review.id)
       body = JSON.parse(response.body)
       expect(body).to be_kind_of(Hash)
-      expect(body["result"]).to_not eq "Review deleted successfully"
+      expect(body["result"]).to_not eq "Review will be deleted"
       expect(body["result"]).to_not eq "Failed to delete review"
       expect(body["result"]).to eq "You do not have permission to delete this review"
       expect(Review.all.length).to eq 1
