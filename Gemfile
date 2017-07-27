@@ -38,4 +38,5 @@ end
 
 group :production do
   gem 'rails_12factor'
+  gem 'mailgunner', '~> 2.4'
 end
