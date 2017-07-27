@@ -12,6 +12,7 @@ class RestaurantReviewTile extends Component {
     this.upvote = this.upvote.bind(this)
     this.downvote = this.downvote.bind(this)
     this.tallyVotes = this.tallyVotes.bind(this)
+    this.deleteReview = this.deleteReview.bind(this)
   }
 
 
@@ -53,6 +54,17 @@ class RestaurantReviewTile extends Component {
     })
   }
 
+
+  deleteReview(id) {
+    fetch(`/api/v1/reviews/${id}`, {
+      method: "DELETE",
+      credentials: "same-origin"
+    }).then(response => {
+      console.log(response);
+    })
+
+  }
+
   componentDidMount() {
     this.tallyVotes()
   }
@@ -73,40 +85,44 @@ class RestaurantReviewTile extends Component {
 
     let totalVotes = this.state.totalVotes
 
-
+    let destroy = () => {
+      this.deleteReview(this.props.id)
+    }
 
     return(
-
-    <div className="panel"  id="descriptionBox">
-      <div>
-        {totalVotes}
-      </div>
-      <div className="text-center row">
-        <div className='small-3 columns'>
-
-          <UpvoteTile
-            upvote={this.upvote}
-            selected={upvoteSelected}
-          />
+      <div className="panel"  id="descriptionBox">
+        <div>
+          {totalVotes}
         </div>
+        <div className="text-center row">
+          <div className='small-3 columns'>
 
-        <div className='small-6 columns'>
-          <div className="text-center">
-            <p>{this.props.rating}</p>
+            <UpvoteTile
+              upvote={this.upvote}
+              selected={upvoteSelected}
+            />
           </div>
-          <div>
-            <p>{this.props.body}</p>
+
+          <div className='small-6 columns'>
+            <div className="text-center">
+              <p>{this.props.rating}</p>
+            </div>
+            <div>
+              <p>{this.props.body}</p>
+            </div>
+          </div>
+
+          <div className='small-3 columns'>
+            <DownvoteTile
+              downvote={this.downvote}
+              selected={downvoteSelected}
+            />
+          </div>
+          <div className="button">
+            <button onClick{destroy}>Delete</button>
           </div>
         </div>
-
-        <div className='small-3 columns'>
-          <DownvoteTile
-            downvote={this.downvote}
-            selected={downvoteSelected}
-          />
-        </div>
       </div>
-    </div>
     )
   }
 
