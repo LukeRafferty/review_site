@@ -30,26 +30,27 @@ Find the best burger restaurants in Boston with Burgr! Burgr let's you can creat
 * `bundle`
 * `npm install`
 
-* Obtain the necessary ENV keys for the [AWS Bucket](https://aws.amazon.com/), and if you want to seed, the [Yelp Api](https://www.yelp.com/developers)
-* Add these lines to your `.env`
+To begin, obtain the necessary ENV keys for the [AWS Bucket](https://aws.amazon.com/). You'll want to create both production and development buckets. Once you you have done so, add these lines to your `.env`
 ```
-YELP_CLIENT_ID=
-YELP_CLIENT_SECRET=
-YELP_ACCESS_TOKEN=
-
 AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
 S3_BUCKET_DEVELOPMENT=
 S3_BUCKET_PRODUCTION=
 ```
 
-* `rake db:create && rake db:migrate && rake db:seed`
+If you want to seed your database with 20 burger restaurants from Boston, sign up for the [Yelp Api](https://www.yelp.com/developers), and add the folowing lines your to `.env`
+```
+YELP_CLIENT_ID=
+YELP_CLIENT_SECRET=
+YELP_ACCESS_TOKEN=
+```
 
+Once you have all those things, you can continue with setup by running the following commands:
+* `rake db:create && rake db:migrate && rake db:seed`
 * `rake` to run the Ruby test suite
 * `karma start` to run the React test suite
 
-* `rails s`
-* `npm start`
+Enter `rails s` and `npm start`, then visit `localhost:3000` to see the site!
 
 
 
