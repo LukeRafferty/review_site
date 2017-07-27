@@ -58,8 +58,8 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "react_rails_monolith_#{Rails.env}"
 
 
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
+  config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.mailgun_settings = {
     :port           => ENV['MAILGUN_SMTP_PORT'],
     :address        => ENV['MAILGUN_SMTP_SERVER'],
     :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
