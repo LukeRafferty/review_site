@@ -15,6 +15,7 @@ gem 'fog-aws'
 gem 'dotenv'
 gem 'dotenv-rails'
 gem 'carrierwave'
+gem 'mailgunner', '~> 2.4'
 
 
 group :test do
