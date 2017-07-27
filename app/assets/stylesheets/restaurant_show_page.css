@@ -2,7 +2,21 @@ a {
   color: white;
 }
 
+.show_page_title {
+  font-family: Molot;
+  src: url(Molot.woff);
+  text-align: center;
+}
 
+.restaurant_show_page_box {
+  border: 3px solid #450E06;
+  border-radius: 10px;
+  background: #6385fb;
+  margin: auto;
+  width: 33%;
+  position: relative;
+  top: 4.5%;
+}
 
 .info{
   background-color: #E5CB7A;
@@ -26,23 +40,12 @@ a {
   margin: 2em;
   padding: 1em 3em 1em 3em;
   border: 1px solid grey;
-  /*margin-left: 10%;
-  margin-right: 10%;*/
 }
 
 
 #stateZip {
   text-align: right;
 }
-/*
-#underline {
-  border-bottom: thin solid;
-  margin-bottom: 10px;
-}*/
-
-/*#reviewTile {
-  margin: 5%;
-}*/
 
 #reviewContainer {
   margin: 5%;
