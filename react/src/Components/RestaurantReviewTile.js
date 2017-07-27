@@ -100,7 +100,7 @@ class RestaurantReviewTile extends Component {
           <h3>{this.state.deletedStatus}</h3>
         </div>
         <div>
-          {totalVotes}
+        <h4>Votes on this review: {totalVotes}</h4>
         </div>
         <div className="text-center row">
           <div className='small-3 columns'>
@@ -111,12 +111,12 @@ class RestaurantReviewTile extends Component {
             />
           </div>
 
-          <div className='small-6 columns'>
+          <div className='small-4 columns'>
             <div className="text-center">
-              <p>{this.props.rating}</p>
+              <h4>User rating: {this.props.rating}</h4>
             </div>
             <div>
-              <p>{this.props.body}</p>
+              <h5>{this.props.body}</h5>
             </div>
           </div>
 
@@ -126,8 +126,8 @@ class RestaurantReviewTile extends Component {
               selected={downvoteSelected}
             />
           </div>
-          <div className="button">
-            <button onClick={destroy}>Delete</button>
+          <div>
+            <button onClick={destroy} className="button end">Delete</button>
           </div>
         </div>
       </div>

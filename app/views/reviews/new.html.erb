@@ -1,5 +1,6 @@
 <% if current_user != nil %>
 
+  <div class="new_review_box">
   <h1>New Review Form for: <%= @restaurant.name %> </h1>
   <%= form_for([@restaurant, @review]) do |f| %>
     <% if @review.errors.any? %>
@@ -20,10 +21,12 @@
     <%= f.label :rating %>
     <%= f.text_field :rating %>
 
-    <%= f.submit "Add Review" %>
+    <%= f.submit "Add Review", class: "button" %>
 
   <% end %>
-
+  </div>
 <% else %>
- <h1>You must be signed in to add a review!</h1>
+  <div class="new_review_box">
+    <h1>You must be signed in to add a review!</h1>
+  </div>
 <% end %>
