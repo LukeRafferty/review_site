@@ -29,7 +29,6 @@ class RestaurantsIndexContainer extends Component {
           name={restaurant.name}
           address={restaurant.address}
           description={restaurant.description}
-          img={"#"}
         />
       )
     })
