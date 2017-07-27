@@ -1,8 +1,20 @@
+@font-face {
+  font-family: 'Molot';
+  src: url('/assets/Molot.woff')
+}
+
 nav.top-bar {
   background-color: #E5CB7A;
 }
 .top-bar-section li.active:not(.has-form) a:not(.button) {
-  background-color: #450E06;
+  background-color: #E5CB7A;
+  color: #450E06;
+  font-family: Molot;
+  src: url(Molot.woff);
+}
+.top-bar-section li.active:not(.has-form) a:not(.button):hover {
+  background-color: #d2a33e;
+  color: #450E06;
 }
 .top-bar .name h1 a {
   color: #450E06;
@@ -11,13 +23,13 @@ nav.top-bar {
 }
 p#Title {
   color: #450E06;
-  font-size: 18em;
+  font-size: 15em;
   font-family: Molot;
   src: url(Molot.woff);
   text-align: center;
-  /*text-decoration: overline underline;*/
-   text-decoration-color: #E5CB7A;
-   text-shadow: 10px 10px #FF4500;
+  text-shadow: 5px 5px #A2402A;
+  position: relative;
+  top: 100px
 }
 .picnic {
   background-image: url("picnic_table_cloth.png");
@@ -26,5 +38,4 @@ p#Title {
 
 div#search {
   background-color: #E5CB7A;
-  box-shadow: 10px 10px #FF4500;
 }
