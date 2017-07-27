@@ -11,9 +11,6 @@ const RestaurantIndexTile = props => {
             <p>Description: {props.description}</p>
           </div>
         </div>
-        <div className={'small-3 columns'}>
-          <img  className={'index-image'} src={props.img}/>
-        </div>
       </div>
     </div>
   )
