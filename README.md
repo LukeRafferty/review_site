@@ -4,7 +4,7 @@
 
 # [Burgr](burgr.herokuapp.com)
 
-Find the best burger restaurants in Boston with Burgr! With Burgr you can create an account, uplaod a photo, write you rown reviews, and vote on other reviews you see.
+Find the best burger restaurants in Boston with Burgr! Burgr let's you can create an account, upload a profile picture, write your own reviews, and vote on other reviews you see!
 
 ## Technology
 * Ruby on Rails
@@ -19,3 +19,9 @@ Find the best burger restaurants in Boston with Burgr! With Burgr you can create
 * [andy2012v](https://github.com/andy2012v)
 * [cburges](https://github.com/cburges)
 * [adamkgray](https://github.com/adamkgray)
+
+## How to get set it up
+* `git clone`
+* `bundle`
+* `npm install`
+
