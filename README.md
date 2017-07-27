@@ -4,7 +4,7 @@
 
 # [Burgr](https://burgr.herokuapp.com)
 
-Find the best burger restaurants in Boston with Burgr! Burgr let's you can create an account, upload a profile picture, write your own reviews and vote on other reviews you see. Designed specifically to invoke the nostalgia, the color pallete of the website draws from the SNES classic Super Mario. But that's not all Burgr has to offer! With admin status, you can crete new retaurants and delete users too. Sign up and join us!
+Find the best burger restaurants in Boston with Burgr! Burgr let's you can create an account, upload a profile picture, write your own reviews and vote on other reviews you see. Designed specifically to invoke the nostalgia, the color pallete of the website draws from the SNES classic Super Mario. But that's not all Burgr has to offer! With admin status, you can create new retaurants and delete users too. Sign up and join us!
 
 ## Collaborators
 * [LukeRafferty](https://github.com/LukeRafferty)
