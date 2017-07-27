@@ -30,7 +30,7 @@ Find the best burger restaurants in Boston with Burgr! Burgr let's you can creat
 * `bundle`
 * `npm install`
 
-To begin, obtain the necessary ENV keys for the [AWS Bucket](https://aws.amazon.com/). You'll want to create both production and development buckets. Once you you have done so, add these lines to your `.env`
+To begin, obtain the necessary ENV keys for [AWS S3](https://aws.amazon.com/). You'll want to create both production and development buckets. Once you have done so, add these lines to your `.env`
 ```
 AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
