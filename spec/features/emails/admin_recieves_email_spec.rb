@@ -21,9 +21,8 @@ feature "website sends email to admin when reivew is posted on a restaurant" do
   click_on 'Add Review'
   expect(page).to have_content(restaurant.name)
   expect(page).to have_content('Review Added Successfully')
-
-  expect(ActionMailer::Base.deliveries.count).to eq(1)
   end
+  
   scenario "incomplete review form sends no email" do
     user = FactoryGirl.create(:user, admin: false)
     restaurant = FactoryGirl.create(:restaurant, user_id: user.id)
