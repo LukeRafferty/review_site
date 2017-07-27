@@ -1,14 +1,14 @@
 <!-- for regular users -->
 <% if current_user != nil && current_user.admin %>
-
-  <h1>Admin tools</h1>
+<div class="admin_bounding_box" >
+  <h1 class="admin_tools">Admin tools</h1>
 
   <div class="text-center">
     <h1>
-      <%= link_to "Create New Burger Joint", new_restaurant_path %>
+      <%= link_to "Create New Burger Joint", new_restaurant_path, :class => 'button' %>
     </h1>
     <h1>
-      <%= link_to "Users Index", users_path %>
+      <%= link_to "Users Index", users_path, :class => 'button' %>
     </h1>
   </div>
 
@@ -21,4 +21,5 @@
 <!-- react -->
 <div id="app">
 
+</div>
 </div>

@@ -1,14 +1,14 @@
-.signup_bounding_box {
+.admin_bounding_box {
   border: 3px solid #450E06;
   border-radius: 10px;
   background: #6385fb;
   margin: auto;
-  width: 50%;
+  width: 40%;
   position: relative;
-  top: 1%;
+  top: 18%;
 }
 
-.signup {
+.admin_tools {
   font-family: Molot;
   src: url(Molot.woff);
   font-size: 75px;
@@ -30,11 +30,4 @@
 .button:hover {
   background-color: #FFD399;
   color: #450E06;
-}
-
-.devise_links {
-  font-family: 'Ubuntu', sans-serif;
-  text-align: center;
-  padding-bottom: 5%;
-  align-content: center;
 }

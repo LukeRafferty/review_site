@@ -23,8 +23,10 @@
   <% end -%>
 
   <div class="actions" align="center">
-    <%= f.submit "Login", :class => 'button' %>
+    <%= f.submit "Log in", :class => 'button' %>
   </div>
 <% end %>
+  <div class="devise_links">
+    <%= render "devise/shared/links" %>
+  </div>
 </div>
-<%= render "devise/shared/links" %>

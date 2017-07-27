@@ -12,7 +12,7 @@
   width: 40%;
   position: relative;
   left: 30%;
-
+  background-image: url("../assets/burger_close_up.gif");
 }
 .login {
   font-family: Molot;
@@ -22,7 +22,7 @@
   text-align: center;
   position: relative;
   top: 5px;
-
+  
 }
 
 .field {
@@ -60,12 +60,18 @@
   text-align: center;
   background-color: #fbb931;
   color: #994800;
-  border: 1px solid black;
-  border-radius: 10px;
+  border: 1px solid #450E06;
 
 }
 
 .button:hover {
   background-color: #FFD399;
   color: #450E06;
+}
+
+.devise_links {
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  padding-bottom: 5%;
+
 }
