@@ -11,7 +11,7 @@ feature "user edits profile" do
 
     click_on "Edit Profile"
     fill_in 'Email', with: 'newemail@example.com'
-    fill_in 'Password', with: 'newpassword'
+    fill_in 'New Password', with: 'newpassword'
     fill_in 'Password Confirmation', with: 'newpassword'
     fill_in 'Current Password', with: user.password
     click_button 'Update'
@@ -44,7 +44,7 @@ feature "user edits profile" do
     click_button 'Log in'
 
     click_on "Edit Profile"
-    fill_in 'Password', with: 'newpassword'
+    fill_in 'New Password', with: 'newpassword'
     fill_in 'Password Confirmation', with: 'newpassword'
     fill_in 'Current Password', with: user.password
     click_button 'Update'
