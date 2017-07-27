@@ -1,7 +1,9 @@
 <!-- for admins -->
 
 <% if current_user != nil && current_user.admin %>
-<h1>Refactor Restaurant</h1>
+
+<div class="edit_restaurant_box">
+  <h1>Refactor Restaurant</h1>
 
   <%= form_for(@restaurant) do |f| %>
 
@@ -36,13 +38,14 @@
     <%= f.label :description %>
     <%= f.text_area :description %>
 
-    <%= f.submit "Refactor", method: :patch %>
+    <%= f.submit "Refactor", method: :patch, class: "button" %>
 
   <% end %>
+</div>
 
 <!-- for regular users -->
 <% else %>
-<div class="text-center">
+<div class="text-center edit_restaurant_box">
   <h1>Oops! You must be an admin to view this page!</h1>
 </div>
 <% end %>
@@ -51,22 +54,3 @@
 <div id="app">
 
 </div>
-
-<!--
-<label>Restaurant Name:</label></br>
-<%= text_field :name, @restaurant.name %></br>
-
-<label>Restaurant Address:</label></br>
-<%= text_field :address, @restaurant.address %></br>
-
-<label>Restaurant City:</label></br>
-<%= text_field :city, @restaurant.city %></br>
-
-<label>Restaurant State:</label></br>
-<%= text_field :state, @restaurant.state %></br>
-
-<label>Restaurant Zip Code:</label></br>
-<%= text_field :zip_code, @restaurant.zip_code %></br>
-
-<label>Restaurant Description:</label></br>
-<%= text_field :description, @restaurant.description %></br> -->

@@ -1,0 +1,10 @@
+.new_review_box {
+  border: 3px solid #450E06;
+  border-radius: 10px;
+  background: #6385fb;
+  margin: auto;
+  width: 68%;
+  position: relative;
+  top: 4.5%;
+  padding: 3em
+}
