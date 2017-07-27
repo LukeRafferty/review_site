@@ -64,7 +64,7 @@ Rails.application.configure do
     :address        => ENV['MAILGUN_SMTP_SERVER'],
     :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
     :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-    :domain         => ENV['MAILGUN_SMTP_LOGIN'],
+    :domain         => 'burgr.mydomain.com',
     :authentication => :plain, }
     config.action_mailer.perform_caching = false
   # Ignore bad email addresses and do not raise email delivery errors.
