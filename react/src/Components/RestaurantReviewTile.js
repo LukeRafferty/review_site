@@ -7,7 +7,8 @@ class RestaurantReviewTile extends Component {
     super(props)
     this.state = {
       totalVotes: 0,
-      isUpvote: undefined
+      isUpvote: undefined,
+      deletedStatus: ""
     }
     this.upvote = this.upvote.bind(this)
     this.downvote = this.downvote.bind(this)
@@ -55,12 +56,16 @@ class RestaurantReviewTile extends Component {
   }
 
 
-  deleteReview(id) {
-    fetch(`/api/v1/reviews/${id}`, {
+  deleteReview() {
+    fetch(`/api/v1/reviews/${this.props.id}`, {
       method: "DELETE",
-      credentials: "same-origin"
-    }).then(response => {
-      console.log(response);
+      credentials: "same-origin",
+      body: JSON.stringify({ id: this.props.id })
+    }).then(response => response.json())
+    .then( response => {
+      this.setState({
+        deletedStatus: response.result
+      })
     })
 
   }
@@ -86,11 +91,14 @@ class RestaurantReviewTile extends Component {
     let totalVotes = this.state.totalVotes
 
     let destroy = () => {
-      this.deleteReview(this.props.id)
+      this.deleteReview()
     }
 
     return(
       <div className="panel"  id="descriptionBox">
+        <div className="text-center">
+          <h3>{this.state.deletedStatus}</h3>
+        </div>
         <div>
           {totalVotes}
         </div>
@@ -119,7 +127,7 @@ class RestaurantReviewTile extends Component {
             />
           </div>
           <div className="button">
-            <button onClick{destroy}>Delete</button>
+            <button onClick={destroy}>Delete</button>
           </div>
         </div>
       </div>
