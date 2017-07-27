@@ -16,27 +16,36 @@
   padding: 1em 3em 1em 3em;
   font-family: 'Oswald', sans-serif;
   text-align: center;
+
+  align-content: center;
 }
 
 .index-link-and-info-container {
   margin: 0em;
   padding: 0em 12em 0em 0em;
+  color: #450E06;
 }
 
 .index-info {
   padding-left: 1em;
   text-align: center;
+  color: #450E06;
 }
 
+a{
+  color: #450E06;
+}
+
+a:hover{
+  color: #994800;
+}
 .restaurant_link {
-  margin-left: 0em;
-  padding-left: 0em;
   padding-bottom: .25em;
   border-bottom: 3px solid #fbb931;
   font-family: Molot;
   src: url(Molot.woff);
-  color: #450E06;
   text-align: center;
+
 }
 
 .restaurant_link:hover {
