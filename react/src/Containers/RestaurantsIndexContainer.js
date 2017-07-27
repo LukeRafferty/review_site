@@ -35,7 +35,7 @@ class RestaurantsIndexContainer extends Component {
 
     return(
       <div>
-        <h1 className={'text-center'}> Burgr Joints </h1>
+        <h1 className={'burgr_joints'}> Burgr Joints </h1>
         <div>
           {restaurants}
         </div>
