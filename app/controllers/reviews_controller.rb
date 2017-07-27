@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
       if @review.save
         ReviewMailer.new_review(@review).deliver_now
         flash[:notice] = 'Review Added Successfully'
-        redirect_to restaurant_path(@review.restaurant.id)
+        redirect_to restaurant_path(@restaurant)
       else
         flash[:alert] = "error!"
         render :new
