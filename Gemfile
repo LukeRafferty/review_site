@@ -16,6 +16,7 @@ gem 'dotenv'
 gem 'dotenv-rails'
 gem 'carrierwave'
 
+
 group :test do
   gem 'coveralls', require: false
   gem 'database_cleaner'
@@ -37,4 +38,5 @@ end
 
 group :production do
   gem 'rails_12factor'
+  gem 'mailgunner', '~> 2.4'
 end

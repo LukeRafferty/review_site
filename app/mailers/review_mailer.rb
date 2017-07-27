@@ -1,12 +1,8 @@
 class ReviewMailer < ApplicationMailer
-  default from: 'notifications@example.com'
+  default from: 'postmaster@sandbox3ee2af90cb214e488b94195339f6c579.mailgun.org'
   def new_review(review)
     @review = review
-    @url = 'http://example.com/review'
+    mail to: "burgrco@gmail.com", subject: "Success! You did it."
 
-    mail(
-      to: review.restaurant.user.email,
-      subject: "New Review for A Site #{review.restaurant.name}"
-    )
   end
 end
