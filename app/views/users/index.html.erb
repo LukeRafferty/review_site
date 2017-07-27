@@ -1,11 +1,12 @@
 
 <% if current_user != nil && current_user.admin %>
 
+<div class="user_index_box">
 
 <% @users.each do |user| %>
 <%= link_to user.username, user%><br>
 <% end %>
-
+</div>
 
 
 <% else %>
