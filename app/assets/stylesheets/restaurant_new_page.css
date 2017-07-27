@@ -1,0 +1,37 @@
+.create_restaurant_box {
+  border: 3px solid #450E06;
+  border-radius: 10px;
+  background: #6385fb;
+  margin: auto;
+  width: 50%;
+  position: relative;
+  top: 1%;
+}
+
+.new_restaurant {
+  font-family: Molot;
+  src: url(Molot.woff);
+  font-size: 50px;
+  color: #450E06;
+  text-align: center;
+  position: relative;
+  top: 5px;
+}
+
+.restaurant_form_fields {
+  font-family: 'Ubuntu', sans-serif;
+  padding: 30px;
+  text-align: left;
+}
+
+.button {
+  font-size: 22px;
+  text-align: center;
+  color: #994800;
+  align-content: center;
+}
+
+.button:hover {
+  background-color: #FFD399;
+  color: #450E06;
+}

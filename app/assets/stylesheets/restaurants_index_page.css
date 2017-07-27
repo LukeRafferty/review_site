@@ -1,9 +1,19 @@
+.text-center {
+  color: #450E06;
+  font-size: 65px;
+  font-family: Molot;
+  src: url(Molot.woff);
+  text-align: center;
+  text-shadow: 1px 1px #994800;
+  position: relative;
+}
+
 .index-container {
-  background-color: #E5CB7A;
-  box-shadow: 10px 10px #FF4500;
+  border: 3px solid #450E06;
+  border-radius: 10px;
+  background: #6385fb;
   margin: 2em;
   padding: 1em 3em 1em 3em;
-  border: 1px solid grey;
 }
 
 .index-link-and-info-container {
@@ -19,7 +29,7 @@
   margin-left: 0em;
   padding-left: 0em;
   padding-bottom: .25em;
-  border-bottom: .5px solid grey;
+  border-bottom: 3px solid #fbb931;
 }
 
 .index-image {

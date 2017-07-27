@@ -1,0 +1,33 @@
+.admin_bounding_box {
+  border: 3px solid #450E06;
+  border-radius: 10px;
+  background: #6385fb;
+  margin: auto;
+  width: 40%;
+  position: relative;
+  top: 18%;
+}
+
+.admin_tools {
+  font-family: Molot;
+  src: url(Molot.woff);
+  font-size: 75px;
+  color: #450E06;
+  text-align: center;
+  position: relative;
+  top: 5px;
+}
+
+.button {
+  font-family: Molot;
+  src: url(Molot.woff);
+  font-size: 22px;
+  text-align: center;
+  color: #994800;
+  align-content: center;
+}
+
+.button:hover {
+  background-color: #FFD399;
+  color: #450E06;
+}

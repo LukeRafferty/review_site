@@ -1,0 +1,77 @@
+.bounding_box {
+  border: 3px solid #450E06;
+  border-radius: 10px;
+  background: #6385fb;
+  margin: auto;
+  width: 33%;
+  position: relative;
+  top: 4.5%;
+}
+
+.dancing_burger {
+  width: 40%;
+  position: relative;
+  left: 30%;
+  background-image: url("../assets/burger_close_up.gif");
+}
+.login {
+  font-family: Molot;
+  src: url(Molot.woff);
+  font-size: 75px;
+  color: #450E06;
+  text-align: center;
+  position: relative;
+  top: 5px;
+  
+}
+
+.field {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 26px;
+  width: 50%;
+  position: relative;
+  bottom: 20px;
+  margin: auto;
+
+}
+
+.email {
+  position: relative;
+  top: 33px;
+}
+
+.password {
+  position: relative;
+  top: 33px;
+}
+
+.remember {
+  position: relative;
+}
+
+.check_box:checked {
+  color: #fbb931;
+}
+
+.button {
+  font-family: Molot;
+  src: url(Molot.woff);
+  font-size: 22px;
+  text-align: center;
+  background-color: #fbb931;
+  color: #994800;
+  border: 1px solid #450E06;
+
+}
+
+.button:hover {
+  background-color: #FFD399;
+  color: #450E06;
+}
+
+.devise_links {
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  padding-bottom: 5%;
+
+}

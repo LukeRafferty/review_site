@@ -1,0 +1,12 @@
+.user_index_box {
+  text-align: center;
+  font-size: 25px;
+  border: 3px solid #450E06;
+  border-radius: 10px;
+  background: #6385fb;
+  margin: auto;
+  width: 25%;
+  position: relative;
+  top: 10%;
+  padding: 15px;
+}
