@@ -13,7 +13,6 @@ feature "user signs up" do
     fill_in 'Email', with: "example@example.com"
     fill_in 'Password', with: 'password'
     fill_in 'Password Confirmation', with: 'password'
-    check 'Admin?'
     click_button 'Sign Up'
 
     expect(page).to have_content('Welcome! You have signed up successfully.')

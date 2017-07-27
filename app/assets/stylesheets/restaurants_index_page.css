@@ -1,4 +1,4 @@
-.text-center {
+.burgr_joints {
   color: #450E06;
   font-size: 65px;
   font-family: Molot;
@@ -14,6 +14,8 @@
   background: #6385fb;
   margin: 2em;
   padding: 1em 3em 1em 3em;
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
 }
 
 .index-link-and-info-container {
@@ -23,17 +25,20 @@
 
 .index-info {
   padding-left: 1em;
+  text-align: center;
 }
 
-.index-link {
+.restaurant_link {
   margin-left: 0em;
   padding-left: 0em;
   padding-bottom: .25em;
   border-bottom: 3px solid #fbb931;
+  font-family: Molot;
+  src: url(Molot.woff);
+  color: #450E06;
+  text-align: center;
 }
 
-.index-image {
-  border: 2px solid grey;
-  height: 10em;
-  width: 10em;
+.restaurant_link:hover {
+  color: #450E06;
 }

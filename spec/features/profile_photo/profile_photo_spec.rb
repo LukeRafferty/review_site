@@ -8,7 +8,6 @@ feature "profile photo" do
     fill_in 'Email', with: "example@example.com"
     fill_in 'Password', with: 'password'
     fill_in 'Password Confirmation', with: 'password'
-    check 'Admin?'
     attach_file "Profile Photo", "#{Rails.root}/spec/support/images/image.png"
     click_button 'Sign Up'
 
