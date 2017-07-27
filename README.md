@@ -2,7 +2,7 @@
 ![Code Climate](https://codeclimate.com/github/LukeRafferty/review_site.png)
 ![Coverage Status](https://coveralls.io/repos/LukeRafferty/review_site/badge.png)
 
-# [Burgr](burgr.herokuapp.com)
+# [Burgr](https://burgr.herokuapp.com)
 
 Find the best burger restaurants in Boston with Burgr! Burgr let's you can create an account, upload a profile picture, write your own reviews, and vote on other reviews you see!
 
