@@ -3,33 +3,67 @@
   src: url('/assets/Molot.woff')
 }
 
+.large_bounding_box {
+  background: transparent;
+  margin: auto;
+  width: 55%;
+  position: relative;
+  top: 10%;
+}
+
+.burger {
+  background-image: url("../assets/burger.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: top;
+  background-size: 33%;
+  position: relative;
+  bottom: 50%;
+}
+
 nav.top-bar {
-  background-color: #E5CB7A;
+  background-color: #fbb931;
+  height: 6%;
 }
 .top-bar-section li.active:not(.has-form) a:not(.button) {
-  background-color: #E5CB7A;
-  color: #450E06;
+  background-color: #fbb931;
+  color: #994800;
   font-family: Molot;
   src: url(Molot.woff);
+  font-size: 20px;
 }
 .top-bar-section li.active:not(.has-form) a:not(.button):hover {
-  background-color: #d2a33e;
+  background-color: #FFD399;
   color: #450E06;
 }
+.top-bar {
+  background-image: url("../assets/burger.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-size: 2.5%;
+  background-position: left;
+}
 .top-bar .name h1 a {
-  color: #450E06;
+  color: #994800;
   font-family: Molot;
   src: url(Molot.woff);
+  font-size: 40px;
+  text-shadow: 1.5px 1.5px #450E06;
+  position: relative;
+  left: 33px;
+}
+.top-bar .name h1 a:hover {
+  color: #450E06;
 }
 p#Title {
   color: #450E06;
-  font-size: 15em;
+  font-size: 220px;
   font-family: Molot;
   src: url(Molot.woff);
   text-align: center;
-  text-shadow: 5px 5px #A2402A;
+  text-shadow: 3.3px 3.3px #994800;
   position: relative;
-  top: 100px
+  top: 133px
 }
 .picnic {
   background-image: url("picnic_table_cloth.png");
@@ -37,5 +71,15 @@ p#Title {
 }
 
 div#search {
-  background-color: #E5CB7A;
+  border: 2px solid #450E06;
+  border-radius: 10px;
+  background: #6385fb;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 26px;
+  background-color: #fbb931;
+  background-position: center;
+  position: relative;
+  top: 33px;
+  width: 175%;
+  right: 120px;
 }

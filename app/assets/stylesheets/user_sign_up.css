@@ -1,0 +1,15 @@
+.bounding_box {
+  border: 3px solid #450E06;
+  border-radius: 10px;
+  background: #6385fb;
+  margin: auto;
+  width: 33%;
+  position: relative;
+  top: 4.5%;
+}
+
+.dancing_burger {
+  width: 40%;
+  position: relative;
+  left: 30%;
+}
